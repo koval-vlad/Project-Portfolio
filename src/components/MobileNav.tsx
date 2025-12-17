@@ -38,13 +38,12 @@ export default function MobileNav({ currentPath, onClose }: MobileNavProps) {
   };
 
   const menuItems = [
-    { label: 'Home', path: '/', expandable: false },
-    { label: 'Tableau', path: '/tableau', expandable: true },
-    { label: 'React', path: '/react', expandable: true },
-    { label: '.NET', path: '/dotnet', expandable: true },
-    { label: 'Python', path: '/python', expandable: true },
-    { label: 'Education', path: '/education/view', expandable: false },
-    { label: 'Resume', path: '/resume', expandable: true },
+    { label: 'Home', path: '/', expandable: false, category: '' },
+    { label: 'Tableau', path: '/tableau', expandable: true, category: 'tableau' },
+    { label: '.NET', path: '/dotnet', expandable: true, category: 'dotnet' },
+    { label: 'VB', path: '/vb', expandable: true, category: 'vb' },
+    { label: 'Education', path: '/education/view', expandable: false, category: '' },
+    { label: 'Resume', path: '/resume', expandable: true, category: '' },
   ];
 
   return (
@@ -82,10 +81,10 @@ export default function MobileNav({ currentPath, onClose }: MobileNavProps) {
               </ListItemButton>
             </ListItem>
 
-            {item.expandable && item.label !== 'Resume' && (
+            {item.expandable && item.label !== 'Resume' && item.category && (
               <Collapse in={openMenus[item.label]} timeout="auto" unmountOnExit>
                 <MobileProjectSubmenu
-                  category={item.label.toLowerCase()}
+                  category={item.category}
                   onClose={onClose}
                 />
               </Collapse>

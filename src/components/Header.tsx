@@ -31,6 +31,10 @@ export default function Header() {
         sx={{
           backgroundColor: '#fff',
           boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+          borderRadius: '10px',
+          margin: '8px',
+          width: 'calc(100% - 16px)',
+          left: 0,
         }}
       >
         <Toolbar sx={{ justifyContent: 'space-between', py: 1 }}>

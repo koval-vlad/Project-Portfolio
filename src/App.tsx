@@ -3,9 +3,8 @@ import { Box, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Header from './components/Header';
 import Home from './pages/Home';
 import TableauProject from './pages/TableauProject';
-import ReactProject from './pages/ReactProject';
 import DotNetProject from './pages/DotNetProject';
-import PythonProject from './pages/PythonProject';
+import VBProject from './pages/VBProject';
 import EducationView from './pages/EducationView';
 import Resume from './pages/Resume';
 
@@ -31,9 +30,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/tableau/:id" element={<TableauProject />} />
-              <Route path="/react/:id" element={<ReactProject />} />
               <Route path="/dotnet/:id" element={<DotNetProject />} />
-              <Route path="/python/:id" element={<PythonProject />} />
+              <Route path="/vb/:id" element={<VBProject />} />
               <Route path="/education/view" element={<EducationView />} />
               <Route path="/resume" element={<Resume />} />
             </Routes>
