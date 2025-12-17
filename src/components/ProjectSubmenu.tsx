@@ -8,7 +8,7 @@ import tableauHrDash from '../assets/tableau-hr-dash.gif';
 import tableauTitanicStory from '../assets/tableau-titanic-story.gif';
 
 // .NET images
-import netDynamoSoft from '../assets/net-dynamo-soft.gif';
+import netDynamoSoft from '../assets/net-dynamo-soft.jpg';
 import netMfsCrims from '../assets/net-mfs-crims.gif';
 import netMfsGpm from '../assets/net-mfs-gpm.gif';
 import netMfsIpo from '../assets/net-mfs-ipo.gif';
