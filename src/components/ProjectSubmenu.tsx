@@ -114,7 +114,7 @@ export default function ProjectSubmenu({ category, onClose }: ProjectSubmenuProp
               component="img"
               image={project.image}
               alt={project.title}
-              sx={{ width: 208, height: 160, objectFit: 'cover' }}
+              sx={{ width: 208, height: 160, objectFit: 'contain', backgroundColor: '#f5f5f5' }}
             />
             <CardContent sx={{ p: 1.5, '&:last-child': { pb: 1.5 } }}>
               <Typography variant="body2" align="center" fontWeight={500}>

@@ -1,6 +1,9 @@
-import { Box, Paper } from '@mui/material';
+import { Box, Paper, Button } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import SlideshowIcon from '@mui/icons-material/Slideshow';
+import PDFViewerModal from '../components/PDFViewerModal';
+import hrDashboardPdf from '../assets/HR-Dashboard.pdf';
 
 declare global {
   namespace JSX {
@@ -20,6 +23,7 @@ declare global {
 export default function TableauProject() {
   const { id } = useParams<{ id: string }>();
   const projectId = parseInt(id || '1', 10);
+  const [pdfOpen, setPdfOpen] = useState(false);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -36,14 +40,37 @@ export default function TableauProject() {
   const renderContent = () => {
     if (projectId === 1) {
       return (
-        <tableau-viz
-          id="tableauViz"
-          src="https://public.tableau.com/views/ModernHRDashboard_17655530147630/HRDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-          width="100%"
-          height="800px"
-          toolbar="bottom"
-          hide-tabs
-        ></tableau-viz>
+        <>
+          <Box sx={{ mb: 2 }}>
+            <Button
+              variant="contained"
+              startIcon={<SlideshowIcon />}
+              onClick={() => setPdfOpen(true)}
+              sx={{
+                backgroundColor: '#1976d2',
+                '&:hover': {
+                  backgroundColor: '#1565c0',
+                },
+              }}
+            >
+              View Presentation
+            </Button>
+          </Box>
+          <tableau-viz
+            id="tableauViz"
+            src="https://public.tableau.com/views/ModernHRDashboard_17655530147630/HRDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+            width="100%"
+            height="800px"
+            toolbar="bottom"
+            hide-tabs
+          ></tableau-viz>
+          <PDFViewerModal
+            open={pdfOpen}
+            onClose={() => setPdfOpen(false)}
+            pdfUrl={hrDashboardPdf}
+            title="HR Dashboard Presentation"
+          />
+        </>
       );
     }
     if (projectId === 2) {

@@ -13,6 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useLocation } from 'react-router-dom';
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
+import vladImage from '../assets/vlad.jpg';
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -55,14 +56,13 @@ export default function Header() {
           )}
 
           <Avatar
+            src={vladImage}
+            alt="Vlad"
             sx={{
               width: 40,
               height: 40,
-              bgcolor: '#1976d2',
             }}
-          >
-            JD
-          </Avatar>
+          />
         </Toolbar>
       </AppBar>
 

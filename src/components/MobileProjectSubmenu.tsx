@@ -115,7 +115,8 @@ export default function MobileProjectSubmenu({
                 sx={{
                   width: 104,
                   height: 80,
-                  objectFit: 'cover',
+                  objectFit: 'contain',
+                  backgroundColor: '#f5f5f5',
                   borderRadius: 1,
                 }}
               />
