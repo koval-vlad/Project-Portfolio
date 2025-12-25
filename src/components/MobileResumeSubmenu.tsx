@@ -2,7 +2,7 @@ import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import DownloadIcon from '@mui/icons-material/Download';
 import { useNavigate } from 'react-router-dom';
-import resumePdf from '../assets/vkoval@gmail.com.Resume.pdf';
+import resumePdf from '/docs/vkoval@gmail.com.Resume.pdf';
 
 interface MobileResumeSubmenuProps {
   onClose: () => void;

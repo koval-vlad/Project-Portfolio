@@ -1,22 +1,35 @@
-import { Box, Typography, Paper, Divider } from '@mui/material';
+import { Box, Typography, Paper, Divider, Button } from '@mui/material';
+import DownloadIcon from '@mui/icons-material/Download';
 
 export default function Resume() {
   return (
     <Box sx={{ px: '8px', py: 2 }}>
       <Paper elevation={2} sx={{ p: 4, borderRadius: '10px', backgroundColor: '#fff' }}>
-        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 3 }}>
-          <Box sx={{ flex: { xs: '1 1 auto', md: '0 0 33%' } }}>
-            <Box>
-              <Typography variant="h5" component="h2" sx={{ fontWeight: 800 }}>
-                Vlad Koval
-              </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-                vkoval@gmail.com | MA
-              </Typography>
-            </Box>
+        <Box sx={{ maxWidth: '800px', mx: 'auto' }}>
+          <Box sx={{ textAlign: 'center', mb: 3 }}>
+            <Typography variant="h5" component="h2" sx={{ fontWeight: 800 }}>
+              Vlad Koval
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+              vkoval@gmail.com | MA
+            </Typography>
+            <Button
+              variant="outlined"
+              size="small"
+              startIcon={<DownloadIcon />}
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/docs/vkoval@gmail.com.Resume.docx';
+                link.download = 'Vlad_Koval_Resume.docx';
+                link.click();
+              }}
+              sx={{ mt: 2 }}
+            >
+              DOWNLOAD WORD
+            </Button>
           </Box>
 
-          <Box sx={{ flex: { xs: '1 1 auto', md: '0 0 67%' } }}>
+          <Box>
             <Typography variant="h6" sx={{ fontWeight: 700 }}>SUMMARY</Typography>
             <Typography variant="body1" sx={{ mt: 1, color: 'text.primary', whiteSpace: 'pre-line' }}>
               Enterprise level Application Development professional with working experience in Financial/Investment Management Software
@@ -114,7 +127,7 @@ export default function Resume() {
               <li>Pluralsight — React - The Big Picture</li>
               <li>Pluralsight — Using gRPC in ASP.NET Core</li>
               <li>Pluralsight — WPF MVVM in Depth</li>
-            </Box>
+          </Box>
           </Box>
         </Box>
       </Paper>
