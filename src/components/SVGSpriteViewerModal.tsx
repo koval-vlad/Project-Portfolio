@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Modal, Paper, Typography, Button, Box, IconButton, CircularProgress } from '@mui/material';
+import { Modal, Paper, Typography, Box, IconButton, CircularProgress } from '@mui/material';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import CloseIcon from '@mui/icons-material/Close';
@@ -14,10 +14,8 @@ import DownloadIcon from '@mui/icons-material/Download';
 interface SVGSpriteViewerModalProps {
   open: boolean;
   onClose: () => void;
-  svgUrl?: string; // For backwards compatibility with sprite files
   pdfUrl: string; // For download
   title?: string;
-  slidePrefix?: string; // e.g., "icon-Slide"
   slideDirectory?: string; // Directory containing individual slide files
   slideCount?: number; // Number of slides
 }
@@ -25,10 +23,8 @@ interface SVGSpriteViewerModalProps {
 export default function SVGSpriteViewerModal({
   open,
   onClose,
-  svgUrl,
   pdfUrl,
   title = 'Presentation',
-  slidePrefix = 'icon-Slide',
   slideDirectory,
   slideCount,
 }: SVGSpriteViewerModalProps) {

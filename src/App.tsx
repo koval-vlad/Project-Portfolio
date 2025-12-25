@@ -6,6 +6,11 @@ import TableauProject from './pages/TableauProject';
 import DotNetProject from './pages/DotNetProject';
 import VBProject from './pages/VBProject';
 import EducationView from './pages/EducationView';
+import FormalDegree from './pages/FormalDegree';
+import Certificates from './pages/Certificates';
+import Pluralsight from './pages/Pluralsight';
+import OracleUniversity from './pages/OracleUniversity';
+import OtherEducation from './pages/OtherEducation';
 import Resume from './pages/Resume';
 
 const theme = createTheme({
@@ -33,6 +38,11 @@ function App() {
               <Route path="/dotnet/:id" element={<DotNetProject />} />
               <Route path="/vb/:id" element={<VBProject />} />
               <Route path="/education/view" element={<EducationView />} />
+              <Route path="/education/formal-degree" element={<FormalDegree />} />
+              <Route path="/education/certificates" element={<Certificates />} />
+              <Route path="/education/pluralsight" element={<Pluralsight />} />
+              <Route path="/education/oracle-university" element={<OracleUniversity />} />
+              <Route path="/education/other" element={<OtherEducation />} />
               <Route path="/resume" element={<Resume />} />
             </Routes>
           </Box>

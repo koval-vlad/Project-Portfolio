@@ -13,6 +13,7 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import { useNavigate } from 'react-router-dom';
 import MobileProjectSubmenu from './MobileProjectSubmenu';
 import MobileResumeSubmenu from './MobileResumeSubmenu';
+import MobileEducationSubmenu from './MobileEducationSubmenu';
 
 interface MobileNavProps {
   currentPath: string;
@@ -42,7 +43,7 @@ export default function MobileNav({ currentPath, onClose }: MobileNavProps) {
     { label: 'Tableau', path: '/tableau', expandable: true, category: 'tableau' },
     { label: '.NET', path: '/dotnet', expandable: true, category: 'dotnet' },
     { label: 'VB', path: '/vb', expandable: true, category: 'vb' },
-    { label: 'Education', path: '/education/view', expandable: false, category: '' },
+    { label: 'Education', path: '/education', expandable: true, category: 'education' },
     { label: 'Resume', path: '/resume', expandable: true, category: '' },
   ];
 
@@ -81,12 +82,18 @@ export default function MobileNav({ currentPath, onClose }: MobileNavProps) {
               </ListItemButton>
             </ListItem>
 
-            {item.expandable && item.label !== 'Resume' && item.category && (
+            {item.expandable && item.label !== 'Resume' && item.label !== 'Education' && item.category && (
               <Collapse in={openMenus[item.label]} timeout="auto" unmountOnExit>
                 <MobileProjectSubmenu
                   category={item.category}
                   onClose={onClose}
                 />
+              </Collapse>
+            )}
+
+            {item.label === 'Education' && (
+              <Collapse in={openMenus[item.label]} timeout="auto" unmountOnExit>
+                <MobileEducationSubmenu onClose={onClose} />
               </Collapse>
             )}
 

@@ -5,6 +5,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useNavigate } from 'react-router-dom';
 import ProjectSubmenu from './ProjectSubmenu';
 import ResumeSubmenu from './ResumeSubmenu';
+import EducationSubmenu from './EducationSubmenu';
 
 interface DesktopNavProps {
   currentPath: string;
@@ -31,7 +32,7 @@ export default function DesktopNav({ currentPath }: DesktopNavProps) {
     { label: 'Tableau', path: '/tableau', expandable: true, category: 'tableau' },
     { label: '.NET', path: '/dotnet', expandable: true, category: 'dotnet' },
     { label: 'VB', path: '/vb', expandable: true, category: 'vb' },
-    { label: 'Education', path: '/education/view', expandable: false, category: '' },
+    { label: 'Education', path: '/education', expandable: true, category: 'education' },
     { label: 'Resume', path: '/resume', expandable: true, category: '' },
   ];
 
@@ -85,7 +86,7 @@ export default function DesktopNav({ currentPath }: DesktopNavProps) {
             {item.label}
           </Button>
 
-          {item.expandable && item.label !== 'Resume' && (
+          {item.expandable && item.label !== 'Resume' && item.label !== 'Education' && (
             <Menu
               anchorEl={anchorEl[item.label]}
               open={isMenuOpen(item.label)}
@@ -110,6 +111,32 @@ export default function DesktopNav({ currentPath }: DesktopNavProps) {
                 category={item.category}
                 onClose={() => handleMenuClose(item.label)}
               />
+            </Menu>
+          )}
+
+          {item.label === 'Education' && (
+            <Menu
+              anchorEl={anchorEl[item.label]}
+              open={isMenuOpen(item.label)}
+              onClose={() => handleMenuClose(item.label)}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              PaperProps={{
+                sx: {
+                  mt: 1,
+                  borderRadius: 3,
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  overflow: 'visible',
+                },
+              }}
+            >
+              <EducationSubmenu onClose={() => handleMenuClose(item.label)} />
             </Menu>
           )}
 

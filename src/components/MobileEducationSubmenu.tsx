@@ -1,6 +1,4 @@
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import DownloadIcon from '@mui/icons-material/Download';
+import { List, ListItem, ListItemButton, ListItemText, Typography, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 interface MobileEducationSubmenuProps {
@@ -10,32 +8,78 @@ interface MobileEducationSubmenuProps {
 export default function MobileEducationSubmenu({ onClose }: MobileEducationSubmenuProps) {
   const navigate = useNavigate();
 
-  const handleView = () => {
-    navigate('/education/view');
-    onClose();
-  };
-
-  const handleDownload = () => {
-    alert('Education document download started');
+  const handleNavigation = (path: string) => {
+    navigate(path);
     onClose();
   };
 
   return (
     <List sx={{ pl: 2, backgroundColor: '#fafafa' }}>
+      {/* Secondary Education Section */}
+      <Box sx={{ px: 2, py: 1 }}>
+        <Typography
+          variant="subtitle2"
+          sx={{
+            fontWeight: 600,
+            color: '#000',
+            fontSize: '0.8rem',
+          }}
+        >
+          Secondary Education
+        </Typography>
+      </Box>
       <ListItem disablePadding>
-        <ListItemButton onClick={handleView}>
-          <ListItemIcon sx={{ minWidth: 40 }}>
-            <VisibilityIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary="View" />
+        <ListItemButton onClick={() => handleNavigation('/education/formal-degree')} sx={{ pl: 3 }}>
+          <ListItemText 
+            primary="Formal Degree" 
+            sx={{ '& .MuiTypography-root': { color: '#1976d2', fontSize: '0.875rem' } }}
+          />
         </ListItemButton>
       </ListItem>
       <ListItem disablePadding>
-        <ListItemButton onClick={handleDownload}>
-          <ListItemIcon sx={{ minWidth: 40 }}>
-            <DownloadIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary="Download" />
+        <ListItemButton onClick={() => handleNavigation('/education/certificates')} sx={{ pl: 3 }}>
+          <ListItemText 
+            primary="Certificates" 
+            sx={{ '& .MuiTypography-root': { color: '#1976d2', fontSize: '0.875rem' } }}
+          />
+        </ListItemButton>
+      </ListItem>
+
+      {/* Professional Development Section */}
+      <Box sx={{ px: 2, py: 1, mt: 1 }}>
+        <Typography
+          variant="subtitle2"
+          sx={{
+            fontWeight: 600,
+            color: '#000',
+            fontSize: '0.8rem',
+          }}
+        >
+          Professional Development
+        </Typography>
+      </Box>
+      <ListItem disablePadding>
+        <ListItemButton onClick={() => handleNavigation('/education/pluralsight')} sx={{ pl: 3 }}>
+          <ListItemText 
+            primary="Pluralsight" 
+            sx={{ '& .MuiTypography-root': { color: '#1976d2', fontSize: '0.875rem' } }}
+          />
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
+        <ListItemButton onClick={() => handleNavigation('/education/oracle-university')} sx={{ pl: 3 }}>
+          <ListItemText 
+            primary="Oracle University" 
+            sx={{ '& .MuiTypography-root': { color: '#1976d2', fontSize: '0.875rem' } }}
+          />
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
+        <ListItemButton onClick={() => handleNavigation('/education/other')} sx={{ pl: 3 }}>
+          <ListItemText 
+            primary="Other" 
+            sx={{ '& .MuiTypography-root': { color: '#1976d2', fontSize: '0.875rem' } }}
+          />
         </ListItemButton>
       </ListItem>
     </List>
