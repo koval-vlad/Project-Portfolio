@@ -1,10 +1,10 @@
-import { Box, Typography, Paper, Button, Modal, IconButton } from '@mui/material';
+import { Box, Typography, Paper, Button } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import SlideshowIcon from '@mui/icons-material/Slideshow';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import SVGSpriteViewerModal from '../components/SVGSpriteViewerModal';
 import hurricanePdf from '../assets/Hurricane-Presentation.pdf';
-import CloseIcon from '@mui/icons-material/Close';
 
 const projectData = [
   { id: 1, label: 'Dynamo Software' },
@@ -24,7 +24,6 @@ export default function DotNetProject() {
   const projectId = parseInt(id || '1', 10);
   const project = projectData.find(p => p.id === projectId) || projectData[0];
   const [presentationOpen, setPresentationOpen] = useState(false);
-  const [giftOpen, setGiftOpen] = useState(false);
 
   return (
     <Box sx={{ px: '8px', py: 2 }}>
@@ -73,8 +72,8 @@ export default function DotNetProject() {
               <Box sx={{ mt: 2 }}>
                 <Button
                   variant="contained"
-                  startIcon={<SlideshowIcon />}
-                  onClick={() => setGiftOpen(true)}
+                  startIcon={<OpenInNewIcon />}
+                  onClick={() => window.open('https://www.pgcalc.com/service/giftcalcs-demo', '_blank')}
                   sx={{
                     backgroundColor: '#1976d2',
                     '&:hover': { backgroundColor: '#1565c0' },
@@ -85,39 +84,6 @@ export default function DotNetProject() {
               </Box>
             </Box>
 
-            <Modal open={giftOpen} onClose={() => setGiftOpen(false)} aria-labelledby="giftcalcs-modal">
-              <Paper
-                elevation={8}
-                sx={{
-                  width: '90%',
-                  height: '90%',
-                  maxWidth: '1200px',
-                  maxHeight: '800px',
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  borderRadius: '10px',
-                  overflow: 'hidden',
-                }}
-              >
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 1, backgroundColor: '#f5f5f5', borderBottom: '1px solid #e0e0e0' }}>
-                  <IconButton size="small" onClick={() => setGiftOpen(false)} title="Close">
-                    <CloseIcon />
-                  </IconButton>
-                </Box>
-                <Box sx={{ flex: 1, p: 0 }}>
-                  <iframe
-                    title="PGCalc Gift Calculator"
-                    src="https://www.pgcalc.com/service/giftcalcs-demo"
-                    style={{ width: '100%', height: '100%', border: 0 }}
-                    allowFullScreen
-                  />
-                </Box>
-              </Paper>
-            </Modal>
           </>
         )}
       </Paper>
