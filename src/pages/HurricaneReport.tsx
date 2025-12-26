@@ -4,13 +4,13 @@ import SlideshowIcon from '@mui/icons-material/Slideshow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTornado } from '@fortawesome/free-solid-svg-icons';
 import SVGSpriteViewerModal from '../components/SVGSpriteViewerModal';
+import ExcelViewer from '../components/ExcelViewer';
 import hurricanePdf from '/docs/Hurricane-Presentation.pdf';
 
 export default function HurricaneReport() {
   const [presentationOpen, setPresentationOpen] = useState(false);
 
-
-  // Helper function to parse Excel file to FortuneSheet format
+  const excelSrc = `https://view.officeapps.live.com/op/embed.aspx?src=${window.location.origin}/docs/Hurricanes-Report.xlsx?version=${new Date().getTime()}`;
 
   return (
     <Box sx={{ px: '8px', py: 2 }}>
@@ -28,9 +28,10 @@ export default function HurricaneReport() {
         </Typography>
 
         <Typography variant="body1" sx={{ mt: 2, mb: 3 }}>
-        Excel report based on the NOAA Best Track Data to identify all hurricanes that have made landfall in Florida since 1900 for risk assessment and emergency planning.
+          Excel report based on the NOAA Best Track Data to identify all hurricanes that have made landfall in Florida since 1900 for risk assessment and emergency planning.
         </Typography>
-        <Box sx={{ mt: 3, mb: 2 }}>
+
+        <Box sx={{ mt: 3, mb: 3 }}>
           <Button
             variant="outlined"
             size="small"
@@ -38,26 +39,15 @@ export default function HurricaneReport() {
             onClick={() => setPresentationOpen(true)}
             sx={{ mt: 0, mr: 2 }}
           >
-            View Presentation            
+            View Presentation
           </Button>
         </Box>
 
-        <Box sx={{
-          width: '100%',
-          height: '1200px',
-          border: '1px solid #e0e0e0',
-          borderRadius: '8px',
-          overflow: 'hidden'
-        }}>
-          <iframe
-            src={`https://view.officeapps.live.com/op/embed.aspx?src=${window.location.origin}/docs/Hurricanes-Report.xlsx?version=${new Date().getTime()}`}
-            /*src="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fkoval%2Dvlad%2Dportfolio%2Evercel%2Eapp%3A443%2Fdocs%2FHurricanes%2DReport%2Exlsx%3Fversion%3D1766702206525"*/
-            width="100%"
-            height="100%"
-            frameBorder="0"
-            title="Hurricane Report Excel Workbook"
-          />
-        </Box>
+        <ExcelViewer
+          src={excelSrc}
+          title="Hurricane Report Excel Workbook"
+          initialZoom={0.5}
+        />
 
         <SVGSpriteViewerModal
           open={presentationOpen}
