@@ -15,10 +15,10 @@ interface ExcelViewerProps {
 export default function ExcelViewer({
   src,
   title = "Excel Workbook",
-  initialZoom = 0.5,
-  minZoom = 0.25,
+  initialZoom = 0.2,
+  minZoom = 0.2,
   maxZoom = 2.0,
-  zoomStep = 0.25,
+  zoomStep = 0.2,
 }: ExcelViewerProps) {
   const [zoom, setZoom] = useState<number>(initialZoom);
 
