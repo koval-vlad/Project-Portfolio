@@ -7,6 +7,7 @@ import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, X, Play, Pause, Presentation, ZoomIn, ZoomOut, Printer, Download, Maximize, Minimize, Shuffle } from 'lucide-react';
 import SVGSpriteSlideshow, { TransitionType, transitionVariants } from './SVGSpriteSlideshow';
+import DynamicBackground from './DynamicBackground';
 
 interface SVGSpriteViewerModalProps {
   open: boolean;
@@ -477,7 +478,9 @@ export default function SVGSpriteViewerModal({
         </div>
 
         {/* Slide Content */}
-        <div className="flex-1 overflow-auto flex justify-center items-center bg-background p-4">
+        <div className="flex-1 overflow-auto flex justify-center items-center p-4 relative">
+          <DynamicBackground positioning="absolute" />
+
           {loading ? (
             <div className="flex items-center">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
