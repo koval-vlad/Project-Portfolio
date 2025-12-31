@@ -64,7 +64,7 @@ export const FuturisticCard: React.FC<FuturisticCardProps> = ({
     >
       {/* Glow effect */}
       <div
-        className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"
+        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"
         style={{
           background: `radial-gradient(circle at center, ${glowColor}20 0%, transparent 70%)`,
         }}
@@ -72,7 +72,7 @@ export const FuturisticCard: React.FC<FuturisticCardProps> = ({
 
       {/* Border glow */}
       <div
-        className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
           background: `linear-gradient(45deg, transparent, ${glowColor}30, transparent)`,
           filter: "blur(1px)",
@@ -82,7 +82,7 @@ export const FuturisticCard: React.FC<FuturisticCardProps> = ({
       {/* Main card */}
       <Card
         className={cn(
-          "relative z-10 border-2 transition-all duration-300 overflow-hidden rounded-2xl",
+          "relative z-10 border-2 transition-all duration-300 overflow-hidden rounded-xl",
           "border-2 border-white/40 bg-card/10 backdrop-blur-xl shadow-lg shadow-white/10",
           "group-hover:border-primary/50 group-hover:shadow-2xl",
           "group-hover:shadow-primary/20"
@@ -97,7 +97,7 @@ export const FuturisticCard: React.FC<FuturisticCardProps> = ({
       </Card>
 
       {/* Animated border lines */}
-      <div className="absolute inset-0 rounded-lg overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+      <div className="absolute inset-0 rounded-xl overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700">
         <div
           className="absolute top-0 left-0 w-full h-0.5 animate-pulse"
           style={{ background: `linear-gradient(90deg, transparent, ${glowColor}, transparent)` }}

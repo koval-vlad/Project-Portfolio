@@ -8,7 +8,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 export default function Resume() {
   return (
     <Box className="px-0 py-2">
-      <Paper elevation={2} className="p-4 rounded-xl">
+      <Paper elevation={2} className="p-4 rounded-xl bg-card/5">
         <Box className="max-w-2xl mx-auto">
           <Box className="text-center mb-3">
             <Typography variant="h4" as="h2" className="font-bold">

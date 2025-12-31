@@ -3,6 +3,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Box } from '@/components/ui/box';
 import Header from './components/Header';
+import DynamicBackground from './components/DynamicBackground';
 import { ThemeProvider } from './components/ThemeProvider';
 import { useTheme } from 'next-themes';
 import { useEffect } from 'react';
@@ -61,7 +62,8 @@ function AppContent() {
 
   return (
     <Router>
-      <Box className="min-h-screen bg-background relative">
+      <Box className="min-h-screen relative">
+        <DynamicBackground />
         <Header />
         <Box className="pt-2 px-6 relative z-10">
           <Routes>

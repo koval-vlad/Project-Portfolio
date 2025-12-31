@@ -48,7 +48,7 @@ const ListItemButton = React.forwardRef<
   <button
     ref={ref}
     className={cn(
-      "flex w-full items-center justify-start rounded-md p-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+      "flex w-full items-center justify-start rounded-md p-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
       className
     )}
     {...props}

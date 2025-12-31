@@ -265,7 +265,7 @@ export const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
     <div className={cn("bg-transparent", className)}>
       <canvas
         ref={canvasRef}
-        className="w-full h-full"
+        className="w-full h-full opacity-30"
         style={{ display: "block" }}
       />
     </div>
