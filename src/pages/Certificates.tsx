@@ -5,7 +5,8 @@ import { Typography } from '@/components/ui/typography';
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import usaFlag from '../assets/usa-flag.svg';
-import clsImage from '../assets/1998-Computer-Learning-Center-large.svg';
+import clsClcImage from '../assets/1998-Computer-Learning-Center-large.svg';
+import clsUssImage from '../assets/2026-Unique-System-Skills-large.svg';
 
 interface CertificateCardProps {
   certificateImage: string;
@@ -71,12 +72,12 @@ export default function Certificates() {
 
   const certificates = [
     {
-      certificateImage: clsImage,
+      certificateImage: clsUssImage,
       topText: ['Certificate in Kubernetes with Cloud and Data Science', 'UNIQUE System Skills LLC (USA)'],
       bottomText: 'Tableau: Transformed raw data into actionable insights by creating professional, interactive dashboards and various chart types for business intelligence reporting. Python: Learned the fundamentals of Python programming, including core syntax, data structures, and the development of scripts to solve real-world problems or automate tasks. Data Science with Python: Focused on using specialized libraries like NumPy and Pandas to manipulate, clean, and visualize complex datasets while introducing core machine learning techniques. AWS Solution Architect: Gained proficiency in designing and deploying scalable, cost-effective, and highly available cloud infrastructures using the Amazon Web Services Well-Architected Framework. Docker Certified Associate: Focused on the fundamentals of containerization, including building images, managing storage and networking, and orchestrating multi-container deployments. Kubernetes: Gained knowledge to design, deploy, and manage containerized applications at scale using cluster setup, services, controllers, and monitoring tools.'
     },
     {
-      certificateImage: clsImage,
+      certificateImage: clsClcImage,
       topText: ['Certificate in Contemporary Application Development', 'Computer Learning Center (USA)'],
       bottomText: 'Object-Oriented Programming (OOP): Fundamental principles including classes, inheritance, polymorphism, and encapsulation used in Visual Basic and C++. Database Integration: Connecting applications to data sources using SQL and database management systems (DBMS). Graphical User Interface (GUI) Design: Creating visual components for Windows-based applications in Visual Basic and C++. Software Development Life Cycle (SDLC): Standard phases of development including requirement analysis, design, coding, testing, and deployment. Programming under various operating systems: C programming under Unix, DOS commands.'
     }
