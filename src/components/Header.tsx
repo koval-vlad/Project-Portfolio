@@ -175,7 +175,7 @@ export default function Header() {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-72 bg-background overflow-y-auto">
+              <SheetContent side="left" className="mobile-sidebar w-72 bg-background overflow-y-auto">
                 <MobileNav currentPath={location.pathname} onClose={handleDrawerToggle} />
               </SheetContent>
             </Sheet>
