@@ -29,6 +29,7 @@ import Pluralsight from './pages/Pluralsight';
 import OracleUniversity from './pages/OracleUniversity';
 import OtherEducation from './pages/OtherEducation';
 import Resume from './pages/Resume';
+import EmailRedactorAI from './pages/EmailRedactorAI';
 
 function AppContent() {
   const { theme } = useTheme();
@@ -83,6 +84,7 @@ function AppContent() {
                 <Route path="/dotnet/hurricane-report" element={<HurricaneReport />} />
                 <Route path="/vb/gift-wrap" element={<GiftWrap />} />
                 <Route path="/vb/database-manager" element={<DatabaseManager />} />
+                <Route path="/python/email-redactor-ai" element={<EmailRedactorAI />} />
                 <Route path="/education/formal-degree" element={<FormalDegree />} />
                 <Route path="/education/certificates" element={<Certificates />} />
                 <Route path="/education/pluralsight" element={<Pluralsight />} />

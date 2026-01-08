@@ -25,6 +25,9 @@ import netKccHurricane from '../assets/net-kcc-hurricane.svg';
 import vbPgcalcGiftWrap from '../assets/vb-pgcalc-gift-wrap.svg';
 import vbPgcalcDbManager from '../assets/vb-pgcalc-db-manager.svg';
 
+// Python images
+import pythonEmailRedactorAi from '../assets/python-email-redactor-ai.svg';
+
 interface MobileProjectSubmenuProps {
   category: string;
   onClose: () => void;
@@ -58,6 +61,9 @@ const projectData: Record<string, Project[]> = {
     { id: 1, title: 'GiftWrap', image: vbPgcalcGiftWrap, route: 'gift-wrap' },
     { id: 2, title: 'Database Manager', image: vbPgcalcDbManager, route: 'database-manager' },
     { id: 3, title: 'Corporate Web Site', image: vbWebSite, route: 'corporate-website' },
+  ],
+  python: [
+    { id: 1, title: 'Email Redactor AI', image: pythonEmailRedactorAi, route: 'email-redactor-ai' },
   ],
 };
 

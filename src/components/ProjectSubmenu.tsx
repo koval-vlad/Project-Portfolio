@@ -25,6 +25,9 @@ import netKccHurricane from '../assets/net-kcc-hurricane.svg';
 import vbPgcalcGiftWrap from '../assets/vb-pgcalc-gift-wrap.svg';
 import vbPgcalcDbManager from '../assets/vb-pgcalc-db-manager.svg';
 
+// Python images
+import pythonEmailRedactorAi from '../assets/python-email-redactor-ai.svg';
+
 interface ProjectSubmenuProps {
   category: string;
   onClose: () => void;
@@ -58,6 +61,9 @@ const projectData: Record<string, Project[]> = {
     { id: 1, title: 'GiftWrap', image: vbPgcalcGiftWrap, route: 'gift-wrap' },
     { id: 2, title: 'Database Manager', image: vbPgcalcDbManager, route: 'database-manager' },
     { id: 3, title: 'Corporate Web Site', image: vbWebSite, route: 'corporate-website' },
+  ],
+  python: [
+    { id: 1, title: 'Email Redactor AI', image: pythonEmailRedactorAi, route: 'email-redactor-ai' },
   ],
 };
 
@@ -98,7 +104,7 @@ export default function ProjectSubmenu({ category, onClose }: ProjectSubmenuProp
       'grid-cols-5'
     } w-max min-w-[300px] max-w-[calc(100vw-12rem)] overflow-hidden`}>
       {projects.map((project, index) => (
-        <div key={project.id} className={`transition-opacity duration-500 ${visibleItems.includes(index) ? 'opacity-100' : 'opacity-0'}`}>
+        <div key={project.id} className={`transition-opacity duration-500 ${visibleItems.includes(index) ? 'opacity-100' : 'opacity-0'} ${columnCount === 1 ? 'flex justify-center' : ''}`}>
           <FuturisticCard className="cursor-pointer transition-all duration-200 w-full max-w-48 hover:-translate-y-1 hover:shadow-lg rounded-xl overflow-hidden" onClick={() => handleProjectClick(project)}>
             <img
               src={project.image}

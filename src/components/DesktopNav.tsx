@@ -26,6 +26,7 @@ export default function DesktopNav({ currentPath }: DesktopNavProps) {
 
   const menuItems = [
     { label: 'Home', path: '/', expandable: false, category: '' },
+    { label: 'Python', path: '/python', expandable: true, category: 'python' },
     { label: 'Tableau', path: '/tableau', expandable: true, category: 'tableau' },
     { label: '.NET', path: '/dotnet', expandable: true, category: 'dotnet' },
     { label: 'VB/ASP', path: '/vb', expandable: true, category: 'vb' },
