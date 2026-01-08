@@ -3,7 +3,6 @@ import { Typography } from '@/components/ui/typography';
 import { Paper } from '@/components/ui/paper';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
-import SlideshowIcon from '@mui/icons-material/Slideshow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTornado } from '@fortawesome/free-solid-svg-icons';
 import SVGSpriteViewerModal from '../components/SVGSpriteViewerModal';
@@ -22,25 +21,24 @@ export default function HurricaneReport() {
   return (
     <Box className="px-0 py-2">
       <Paper elevation={2} className="p-4 rounded-xl">
-        <Typography variant="h4" as="h1" className="flex items-center gap-1">
-          Hurricane Report
-          <FontAwesomeIcon icon={faTornado} style={{ fontSize: '1.2rem' }} />
-        </Typography>
-
-        <Typography variant="p" className="mt-2 mb-3">
-          Excel report based on the NOAA Best Track Data to identify all hurricanes that have made landfall in Florida since 1900 for risk assessment and emergency planning.
-        </Typography>
-
-        <Box className="mt-3 mb-3">
+        <Typography variant="h4" as="h1" className="flex items-center gap-2 justify-between">
+          <span className="flex items-center gap-1">
+            Hurricane Report
+            <FontAwesomeIcon icon={faTornado} style={{ fontSize: '1.2rem' }} />
+          </span>
           <Button
             variant="super3d"
             size="sm"
             onClick={() => setPresentationOpen(true)}
-            className="mt-0 mr-2"
+            className="text-xs h-7 px-2"
           >
             View Presentation
           </Button>
-        </Box>
+        </Typography>
+
+        <Typography variant="p" className="mt-2 mb-3">
+          Dynamically generated Excel report based on the NOAA Best Track Data to identify all hurricanes that made landfall in a specific US State since 1900 used for risk assessment and emergency planning.
+        </Typography>
 
         <ExcelViewer
           src={excelSrc}

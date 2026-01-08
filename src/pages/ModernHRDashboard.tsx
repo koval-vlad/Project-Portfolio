@@ -3,7 +3,6 @@ import { Paper } from '@/components/ui/paper';
 import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
 import { useEffect, useState } from 'react';
-import SlideshowIcon from '@mui/icons-material/Slideshow';
 import { HiOutlinePresentationChartLine } from 'react-icons/hi';
 import SVGSpriteViewerModal from '../components/SVGSpriteViewerModal';
 import hrDashboardPdf from '/docs/HR-Dashboard.pdf';
@@ -27,24 +26,24 @@ export default function ModernHRDashboard() {
   return (
     <Box className="px-0 py-2">
       <Paper elevation={2} className="p-2 rounded-xl">
-        <Typography variant="h4" as="h2" className="mb-2 flex items-center gap-1">
-          Modern HR Dashboard
-          <HiOutlinePresentationChartLine style={{ fontSize: '1.5rem' }} />
+        <Typography variant="h4" as="h2" className="mb-2 flex items-center gap-2 justify-between">
+          <span className="flex items-center gap-1">
+            Modern HR Dashboard
+            <HiOutlinePresentationChartLine style={{ fontSize: '1.5rem' }} />
+          </span>
+          <Button
+            variant="super3d"
+            size="sm"
+            onClick={() => setPresentationOpen(true)}
+            className="text-xs h-7 px-2"
+          >
+            View Presentation
+          </Button>
         </Typography>
         <Typography variant="p" className="mb-3">
           An interactive Tableau dashboard providing comprehensive analytics for human resources management,
           including employee demographics, performance metrics, and organizational insights.
         </Typography>
-        <Box className="mb-6">
-          <Button
-            variant="super3d"
-            size="sm"
-            onClick={() => setPresentationOpen(true)}
-            className="mt-0"
-          >
-            View Presentation
-          </Button>
-        </Box>
         <tableau-viz
           id="tableauViz"
           src="https://public.tableau.com/views/ModernHRDashboard_17655530147630/HRDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
