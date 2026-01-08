@@ -1,6 +1,6 @@
 # My Portfolio
 
-A modern, interactive portfolio website showcasing professional projects, education, and skills. Built with React, TypeScript, and a comprehensive set of modern web technologies.
+A modern, interactive portfolio website showcasing professional projects, education, and skills. Built with React, TypeScript and a comprehensive set of modern web technologies.
 
 **Live Demo:** [https://koval-vlad-portfolio.vercel.app/](https://koval-vlad-portfolio.vercel.app/)
 
