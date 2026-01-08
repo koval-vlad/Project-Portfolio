@@ -96,13 +96,16 @@ export default function ProjectSubmenu({ category, onClose }: ProjectSubmenuProp
   };
 
   return (
-    <Box className={`grid gap-3 p-4 rounded-xl bg-background ${
-      columnCount === 1 ? 'grid-cols-1' :
-      columnCount === 2 ? 'grid-cols-2' :
-      columnCount === 3 ? 'grid-cols-3' :
-      columnCount === 4 ? 'grid-cols-4' :
-      'grid-cols-5'
-    } w-max min-w-[300px] max-w-[calc(100vw-12rem)] overflow-hidden`}>
+    <Box 
+      className={`${columnCount === 1 ? 'inline-grid' : 'grid'} gap-3 p-4 rounded-xl bg-background ${
+        columnCount === 1 ? 'grid-cols-1' :
+        columnCount === 2 ? 'grid-cols-2' :
+        columnCount === 3 ? 'grid-cols-3' :
+        columnCount === 4 ? 'grid-cols-4' :
+        'grid-cols-5'
+      } ${columnCount === 1 ? '' : 'w-max'} ${columnCount === 1 ? '' : 'min-w-[300px]'} max-w-[calc(100vw-12rem)] overflow-hidden`}
+      style={columnCount === 1 ? { width: 'fit-content', minWidth: '300px' } : undefined}
+    >
       {projects.map((project, index) => (
         <div key={project.id} className={`transition-opacity duration-500 ${visibleItems.includes(index) ? 'opacity-100' : 'opacity-0'} ${columnCount === 1 ? 'flex justify-center' : ''}`}>
           <FuturisticCard className="cursor-pointer transition-all duration-200 w-full max-w-48 hover:-translate-y-1 hover:shadow-lg rounded-xl overflow-hidden" onClick={() => handleProjectClick(project)}>
