@@ -284,7 +284,7 @@ Vlad Koval
 ## 🔗 Links
 
 - **Live Demo**: [https://koval-vlad-portfolio.vercel.app/](https://koval-vlad-portfolio.vercel.app/)
-- **Repository**: [https://github.com/koval-vlad/my-portfolio-lovable](https://github.com/koval-vlad/my-portfolio-lovable)
+- **Repository**: [https://github.com/koval-vlad/my-portfolio](https://github.com/koval-vlad/my-portfolio-lovable)
 
 ---
 
