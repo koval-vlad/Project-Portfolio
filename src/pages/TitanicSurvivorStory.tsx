@@ -22,7 +22,7 @@ export default function TitanicSurvivorStory() {
     <Box className="px-0 py-2">
       <Paper elevation={2} className="p-2 rounded-xl">
         <Typography variant="h4" as="h2" className="mb-2 flex items-center gap-1">
-          Titanic Survivor Story
+          Titanic Survivor Story<sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>Personal</sup>
           <FontAwesomeIcon icon={faShip} style={{ fontSize: '1.2rem' }} />
         </Typography>
         <Typography variant="p" className="mb-3">

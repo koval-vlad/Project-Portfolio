@@ -21,7 +21,7 @@ export default function HRAnalyticsDashboard() {
     <Box className="px-0 py-2">
       <Paper elevation={2} className="p-2 rounded-xl">
         <Typography variant="h4" as="h2" className="mb-2 flex items-center gap-1">
-          HR Analytics Dashboard
+          HR Analytics Dashboard<sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>Personal</sup>
           <BarChartIcon style={{ fontSize: '1.5rem' }} />
         </Typography>
         <Typography variant="p" className="mb-3">

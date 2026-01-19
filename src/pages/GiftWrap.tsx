@@ -9,7 +9,7 @@ export default function GiftWrap() {
     <Box className="px-0 py-2">
       <Paper elevation={2} className="p-4 rounded-xl">
         <Typography variant="h4" as="h1" className="flex items-center gap-1">
-          GiftWrap
+          GiftWrap <sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>PG Calc</sup>
           <FontAwesomeIcon icon={faGift} style={{ fontSize: '1.2rem' }} />
         </Typography>
 

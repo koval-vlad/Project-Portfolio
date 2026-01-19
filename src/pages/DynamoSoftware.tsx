@@ -8,7 +8,7 @@ export default function DynamoSoftware() {
     <Box className="px-0 py-2">
       <Paper elevation={2} className="p-4 rounded-xl">
         <Typography variant="h4" as="h1" className="flex items-center gap-1">
-          Dynamo Software
+          Dynamo Software<sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>Dynamo</sup>
           <AssessmentOutlined sx={{ fontSize: '1.5rem' }} />
         </Typography>
 

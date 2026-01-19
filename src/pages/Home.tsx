@@ -39,7 +39,7 @@ export default function Home() {
             <Box className="relative z-10">
                 <Paper elevation={2} className="p-2 rounded-xl">
                     <Typography variant="h4" as="h1" className="mb-2">
-                        Welcome to My Portfolio
+                        Welcome to Project Portfolio
                     </Typography>
                     <Typography variant="p" className="mb-4">
                         This is a portfolio of my professional and personal applications demonstrating full-stack development capabilities.

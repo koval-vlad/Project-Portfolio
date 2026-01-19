@@ -28,7 +28,7 @@ export default function ModernHRDashboard() {
       <Paper elevation={2} className="p-2 rounded-xl">
         <Typography variant="h4" as="h2" className="mb-2 flex items-center gap-2 justify-between">
           <span className="flex items-center gap-1">
-            Modern HR Dashboard
+            Modern HR Dashboard<sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>Personal</sup>
             <HiOutlinePresentationChartLine style={{ fontSize: '1.5rem' }} />
           </span>
           <Button

@@ -2,7 +2,6 @@ import { Box } from '@/components/ui/box';
 import { Typography } from '@/components/ui/typography';
 import { Paper } from '@/components/ui/paper';
 import { Button } from '@/components/ui/button';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import TableViewIcon from '@mui/icons-material/TableView';
@@ -11,23 +10,22 @@ export default function GiftCalcs() {
   return (
     <Box className="px-0 py-2">
       <Paper elevation={2} className="p-4 rounded-xl">
-        <Typography variant="h4" as="h1" className="flex items-center gap-1">
-          Gift Calcs
-          <FontAwesomeIcon icon={faCalculator} style={{ fontSize: '1.2rem' }} />
+        <Typography variant="h4" as="h1" className="flex items-center gap-2 justify-between">
+          <span className="flex items-center gap-1">
+            Gift Calcs <sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>PG Calc</sup>
+            <FontAwesomeIcon icon={faCalculator} style={{ fontSize: '1.2rem' }} />
+          </span>
+          <Button
+            variant="super3d"
+            size="sm"
+            onClick={() => window.open('https://www.pgcalc.com/service/giftcalcs-demo', '_blank')}
+            className="text-xs h-7 px-2"
+          >
+            View GiftCalcs
+          </Button>
         </Typography>
 
         <Box className="mt-3">
-          <Box className="mt-2">
-            <Button
-              variant="glow"
-              size="sm"
-              onClick={() => window.open('https://www.pgcalc.com/service/giftcalcs-demo', '_blank')}
-              className="mt-0"
-            >
-              View GiftCalcs
-            </Button>
-          </Box>
-
           <Box sx={{ mt: 3 }}>
             <Typography variant="p" className="mb-1">
               • Developed commercial charitable deduction calculator that could be customized to match a client's web site look and feel (ASP, JavaScript, VBScript, HTML)

@@ -11,7 +11,7 @@ export default function CRDTradingSystem() {
     <Box className="px-0 py-2">
       <Paper elevation={2} className="p-4 rounded-xl">
         <Typography variant="h4" as="h1" className="flex items-center gap-1">
-          CRD Trading System
+          CRD Trading System<sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>MFS</sup>
           <FontAwesomeIcon icon={faPeopleRoof} style={{ fontSize: '1.2rem' }} />
           <FontAwesomeIcon icon={faMoneyBillTrendUp} style={{ fontSize: '1.2rem' }} />
           <FontAwesomeIcon icon={faLandmark} style={{ fontSize: '1.2rem' }} />

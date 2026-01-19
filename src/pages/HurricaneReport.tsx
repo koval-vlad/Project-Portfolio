@@ -23,7 +23,7 @@ export default function HurricaneReport() {
       <Paper elevation={2} className="p-4 rounded-xl">
         <Typography variant="h4" as="h1" className="flex items-center gap-2 justify-between">
           <span className="flex items-center gap-1">
-            Hurricane Report
+            Hurricane Report<sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>Personal</sup>
             <FontAwesomeIcon icon={faTornado} style={{ fontSize: '1.2rem' }} />
           </span>
           <Button

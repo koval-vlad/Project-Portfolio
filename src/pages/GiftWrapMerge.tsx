@@ -8,7 +8,7 @@ export default function GiftWrapMerge() {
     <Box className="px-0 py-2">
       <Paper elevation={2} className="p-4 rounded-xl">
         <Typography variant="h4" as="h1" className="flex items-center gap-1">
-          GiftWrap Merge
+          GiftWrap Merge <sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>PG Calc</sup>
           <Box className="flex items-center gap-0.5">
             <HiDatabase style={{ fontSize: '1.2rem' }} />
             <HiSwitchHorizontal style={{ fontSize: '1.2rem' }} />

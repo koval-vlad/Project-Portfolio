@@ -8,7 +8,7 @@ export default function DatabaseManager() {
     <Box className="px-0 py-2">
       <Paper elevation={2} className="p-4 rounded-xl">
         <Typography variant="h4" as="h1" className="flex items-center gap-1">
-          Database Manager
+          Database Manager <sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>PG Calc</sup>
           <Box className="flex items-center">
             <HiUser style={{ fontSize: '1.2rem' }} />
             <HiDatabase style={{ fontSize: '1.2rem' }} />
