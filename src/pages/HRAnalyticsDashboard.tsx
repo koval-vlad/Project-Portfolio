@@ -42,13 +42,13 @@ export default function HRAnalyticsDashboard() {
         <Typography variant="p" className="mb-3">
           Advanced analytics dashboard for human resources data analysis, featuring interactive visualizations
           and key performance indicators for HR decision making.
-        </Typography>
+        </Typography>        
         <div className="myTableauViz" style={{ width: '100%', maxWidth: '1400px', marginLeft: 'auto', marginRight: 'auto' }}>
           <tableau-viz
             id="tableauViz"
             src="https://public.tableau.com/views/HRAnalyticsDashboard_17688740732590/HRDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
             width="100%"
-            height="800px"
+            height="810px"
             toolbar="bottom"
             hide-tabs
           ></tableau-viz>

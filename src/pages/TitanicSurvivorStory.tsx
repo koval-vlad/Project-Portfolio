@@ -49,7 +49,7 @@ export default function TitanicSurvivorStory() {
             id="tableauViz"
             src="https://public.tableau.com/shared/D5J3ZZ2CH?:display_count=n&:origin=viz_share_link"
             width="100%"
-            height="800px"
+            height="1000px"
             toolbar="bottom"
             hide-tabs
           ></tableau-viz>
