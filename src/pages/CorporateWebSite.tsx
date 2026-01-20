@@ -13,23 +13,23 @@ export default function CorporateWebSite() {
           <FontAwesomeIcon icon={faGlobe} style={{ fontSize: '1.2rem' }} />
         </Typography>
 
-        <Box className="mt-3">
-          <Typography variant="p" className="mb-1">
+        <Box className="mt-3 [&_p:nth-of-type(even)]:text-primary">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Provided a web utility to generate/decode GiftWrap and PGM authentication codes (ASP)
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Enhanced and improved the internal employee sign-in scheduler (ASP, FoxPro)
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Developed web site resources section giving the visitors the information on planned giving publications, company partner services and other useful online information related to the field. Provided the intranet tool to manage planned giving resources data (ASP, FoxPro)
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Made available to the public the schedule of conferences where the company president and top managers would give speeches on various planned giving subjects. Created the admin utility to add and modify new conferences and speeches (ASP, FoxPro, Java applet)
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Added planned giving training service calendar and session registration section to the web site. Implemented the intranet tool to manage training sessions and classes (ASP, FoxPro)
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Programmed shopping capabilities of the site to promote new products (like planned giving manuals) and introduce discounted prices for the existing ones: PGM, GiftWrap, GiftCalcs (ASP, FoxPro)
           </Typography>
         </Box>

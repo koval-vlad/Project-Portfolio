@@ -47,7 +47,7 @@ const CertificateCard = ({ certificateImage, topText, bottomText, onImageClick }
       </div>
 
       {/* Bottom Text - Always Visible */}
-      <div className="p-2">
+      <div className="p-2 [&_p:nth-of-type(even)]:text-primary">
         <Typography variant="certificate">
           {bottomText}
         </Typography>

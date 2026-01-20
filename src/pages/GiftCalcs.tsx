@@ -25,88 +25,82 @@ export default function GiftCalcs() {
           </Button>
         </Typography>
 
-        <Box className="mt-3">
+        <Box className="mt-3 [&_p:nth-of-type(even)]:text-primary">
           <Box sx={{ mt: 3 }}>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Developed commercial charitable deduction calculator that could be customized to match a client's web site look and feel (ASP, JavaScript, VBScript, HTML)
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Ported the ASP version to the ASP.NET object oriented application (ASP.NET, C#, VB.NET, SQL Server 2000)
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Totally restructured FoxPro data storage into the normalized SQL Server database
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Created a .NET tool to programmatically migrate data into the new database
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Replaced SQL statements used for the data access with stored procedures to separate the scripts from the application code and improve performance
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Created the library of customized ASP.NET server controls to simplify UI development and enhance user experience
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Completely redesigned the UI to make it more usable and attractive to the clients
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Improved performance by using the customized SQL data and ViewState caching, stored procedure parameter caching, preloading of static SQL tables, complete code pre-compilation
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Extended program features by adding templated HTML email broadcaster with asynchronous SMTP send feature
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Strengthened security model by creating several access layers based on the application entry point and the level of the purchased product. Encrypted most sensitive information (database connection string and critical Url parameters). Properly set application folder and file access permissions.
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Implemented a Windows service configurable from the OS system tray for temporary file cleanup and handling bulk email files (VB.NET, C#)
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Made sure the application is compatible with the variety of browsers
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Created database diagrams, documented solution projects as well as stored procedures and tables (SQL Enterprise Manager, WestWind Help Builder)
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Developed InstallShield project and custom windows application for the rapid deployment onto the production server
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Secured and versioned the code in Visual Source Safe
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Gradually migrated the application to NET Framework 2.0 from version 1.0 and 1.1
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Worked on the integration of a gift presentation slideshow (GiftStory) into the GiftCalcs code base (ASP.NET, Flash)
             </Typography>
-            <Typography variant="p" className="mb-1">
+            <Typography variant="p" className="mb-0 !mt-0">
               • Developed a tool to update the GiftCalcs database schema and data on the live server to suit the new product needs (C# desktop application)
             </Typography>
           </Box>
         </Box>
       </Paper>
-
-      <Paper
-        elevation={2}
-        sx={{
-          p: 4,
-          borderRadius: '10px',
-          backgroundColor: '#fff',
-          mt: 2,
-        }}
-      >
-        <Typography variant="h6" component="h1" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          Batch Calculator
-          <TableViewIcon style={{ fontSize: '1.6rem' }} />
+      <br />
+      <Paper elevation={2} className="p-4 rounded-xl">
+        <Typography variant="h4" as="h1" className="flex items-center gap-2 justify-between">
+          <span className="flex items-center gap-1">
+            Batch Calculator <sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>PG Calc</sup>
+            <TableViewIcon style={{ fontSize: '1.6rem' }} />
+          </span>       
         </Typography>
 
-        <Box sx={{ mt: 3 }}>
-          <Typography variant="body1" sx={{ mb: 1 }}>
+        <Box className="mt-3 [&_p:nth-of-type(even)]:text-primary">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Designed and implemented charitable deductions calculator capable of accepting a set of records from various data sources based on the common interface (C# desktop application)
           </Typography>
-          <Typography variant="body1" sx={{ mb: 1 }}>
+          <Typography variant="p" className="mb-0 !mt-0">
             • Created a record-by-record error handling log in case of invalid data
           </Typography>
-          <Typography variant="body1" sx={{ mb: 1 }}>
+          <Typography variant="p" className="mb-0 !mt-0">
             • Displayed the step-by-step process on the screen
           </Typography>
         </Box>

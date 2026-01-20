@@ -54,16 +54,16 @@ const Typography = React.forwardRef<HTMLParagraphElement, TypographyProps>(
             const description = trimmedSentence.substring(colonIndex + 1).trim();
 
             return (
-              <div key={index} className="mb-2">
+              <p key={index} className="mb-2">
                 <span className="font-bold">{label}</span>{description && ` ${description}`}
-              </div>
+              </p>
             );
           }
 
           return (
-            <div key={index} className="mb-2">
+            <p key={index} className="mb-2">
               {trimmedSentence}
-            </div>
+            </p>
           );
         });
       };

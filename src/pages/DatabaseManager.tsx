@@ -15,14 +15,14 @@ export default function DatabaseManager() {
           </Box>
         </Typography>
 
-        <Box className="mt-3">          
-          <Typography variant="p" className="mb-1">
+        <Box className="mt-3 [&_p:nth-of-type(even)]:text-primary">          
+          <Typography variant="p" className="mb-0 !mt-0">
             • Designed and implemented Database Manager tool for the MSDE clients
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • The application not only replicated the essential functionality of SQL Server Enterprise Manager but also had some extra features: rename database, correct user/login mappings etc. (VB6, SQLDMO, OSQL)
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Handled MSDE installation support issues, resolved SQL Server connectivity problems in various system/network configurations
           </Typography>  
         </Box>

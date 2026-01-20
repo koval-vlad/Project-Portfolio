@@ -17,26 +17,26 @@ export default function CRDTradingSystem() {
           <FontAwesomeIcon icon={faLandmark} style={{ fontSize: '1.2rem' }} />
         </Typography>
 
-        <Box className="mt-3">
-          <Typography variant="p" className="mb-1">
+        <Box className="mt-3 [&_p:nth-of-type(even)]:text-primary">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Worked on the company wide initiative of integrating in-house order management client applications into newly adopted CRD Trading System. That included routing equity orders to CRD, performing compliance rule checks in the new trading system and overriding those rules.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Created and improved WCF ETL services used to enable the flow of issuers, orders and unavailable shares into CRD Trading system. Worked on identifying split/merged CRD orders. (IBM MQ, C# Windows service, CRD API, Oracle).
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Designed and implemented Portfolio Manager Approval and Plugin services along with several UI add-ins to customize CRD Workbench order modelling. In the process created CRD result sets and workflow rules for trading data retrieval and updates, configured portfolio manager/specialist trading blotter layouts.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Made changes to the Order Generation module to process all orders send to CRD in one transaction: if one order fails - all the orders would fail. Introduced CRD broker check for IPO orders created in MFS Order Manager. Consolidated all the CRD validation messages in order to return an easy to display list to client applications (C# WCF Windows service).
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Created Intraday Issuer service to enable the flow of issuer information from Eagle to CRD and internal order data system (IBM MQ, C# Windows service, CRD API, Oracle).
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Worked on identifying split/merged CRD orders in MFS Trade Domain service and displaying the trade blotter of MFS Order Manager. Created refreshing cache mechanism used as a source of broker and user validation. Notified support with emails if validation detected any order issues. (IBM MQ, C# Windows service, Oracle, HTML email).
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Made sure Crd trade blotter module supplies average price and fund group to MFS Order Manager (C# WCF Windows service, Oracle).
           </Typography>
         </Box>

@@ -13,17 +13,17 @@ export default function IPOModule() {
           <FontAwesomeIcon icon={faRocket} style={{ fontSize: '1.2rem' }} />
         </Typography>
 
-        <Box className="mt-3">          
-          <Typography variant="p" className="mb-1">
+        <Box className="mt-3 [&_p:nth-of-type(even)]:text-primary">          
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Worked with the team of developers to migrate IPO Deals functionality into a new module in order to standardize the Limited Offering order creation process. 
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Created a new Blotter for managing Limited Offerings and Indications.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Adapted existing Order window for the creation of the limited offering Indication.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Added validation, allocation normalization, allocate residual shares functionality to LO Final Allocation window which was designed to create a resulting proposed order.
           </Typography>         
         </Box>

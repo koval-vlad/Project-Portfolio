@@ -57,7 +57,7 @@ export default function FormalDegree() {
         </div>
 
         {/* Coursework Description */}
-        <div className="p-3">
+        <div className="p-3 [&_p:nth-of-type(even)]:text-primary">
           {coursework.map((item, index) => (
             <p
               key={index}

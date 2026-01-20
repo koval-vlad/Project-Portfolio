@@ -39,7 +39,7 @@ export default function Resume() {
               Industry. Proficient in application and database development with solid understanding of software architecture and design
               principles. Excellent problem-solving and debugging, communication and collaboration as well as customer support skills.
             </Typography>
-
+            <br />
             <Typography variant="h6" className="font-bold mt-3">TECHNICAL SKILLS</Typography>
             <Box component="ul" sx={{ pl: 3, mt: 1 }}>
               <li><strong>Programming languages:</strong> C#, SQL, PL/SQL, VB.NET, VB6, VB Script, JavaScript, CSS, HTML</li>
@@ -51,7 +51,7 @@ export default function Resume() {
               <li><strong>APIs/Libraries:</strong> Charles River API/Plugins, Fincad API, MS Entity Framework</li>
               <li><strong>Trading Systems:</strong> Charles River IMS, HelioGraph, Omgeo Oasys/CTM</li>
             </Box>
-
+            <br />
             <Typography variant="h6" className="font-bold mt-3">EXPERIENCE</Typography>
 
             <Box sx={{ mt: 1 }}>
@@ -112,10 +112,10 @@ export default function Resume() {
             </Box>
 
             <Divider className="my-2" />
-
+            <br />
             <Typography variant="h6" className="font-bold">EDUCATION</Typography>
-            <Typography variant="p" className="mt-1">B.A. in English Language and Literature | Zaporizhzhia State University, Ukraine</Typography>
-            <Typography variant="p">Contemporary Applications Development Certification | Computer Learning Center, MA</Typography>
+            <Typography variant="p" className="mb-0 !mt-0">B.A. in English Language and Literature | Zaporizhzhia State University, Ukraine</Typography>
+            <Typography variant="p" className="mb-0 !mt-0">Contemporary Applications Development Certification | Computer Learning Center, MA</Typography>
 
             <Typography variant="h6" className="font-bold mt-3">CERTIFICATIONS</Typography>
             <Box component="ul" sx={{ pl: 3, mt: 1 }}>

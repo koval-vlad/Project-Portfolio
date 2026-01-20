@@ -13,32 +13,32 @@ export default function GiftWrap() {
           <FontAwesomeIcon icon={faGift} style={{ fontSize: '1.2rem' }} />
         </Typography>
 
-        <Box className="mt-3">
-          <Typography variant="p" className="mb-1">
+        <Box className="mt-3 [&_p:nth-of-type(even)]:text-primary">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Worked in the team of several programmers to migrate a gift planning administration product from the procedural into the object oriented client-server program (FoxPro, VB6, SQL Server, Crystal Reports)
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Ported the UI data entry and reporting forms from FoxPro into VB6
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Provided the reporting functionality by integrating Crystal Reports into the user interface project
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Developed a component to merge the database records with the templated PDF tax forms (VB, FDF Toolkit, Adobe Acrobat)
           </Typography>          
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Implemented utility libraries for the management of system registry, ODBC data sources, INI files, data encryption, UI dialog boxes etc. (VB6)
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Maintained complex install project (InstallShield) that included several third party modules (SQL Server components, Crystal Reports, FDF Toolkit)
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Programmed the desktop tool for the batch generation of GiftWrap authorization codes (VB6, FoxPro)
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Created the Autorun utility used as an installation menu on the GiftWrap CD
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Handled GiftWrap support issues, resolved application conflict situations, troubleshooted product setup and performance
           </Typography>          
         </Box>

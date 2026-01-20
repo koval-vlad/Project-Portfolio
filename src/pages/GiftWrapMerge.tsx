@@ -16,17 +16,17 @@ export default function GiftWrapMerge() {
           </Box>
         </Typography>
 
-        <Box className="mt-3">          
-          <Typography variant="p" className="mb-1">
+        <Box className="mt-3 [&_p:nth-of-type(even)]:text-primary">          
+          <Typography variant="p" className="mb-0 !mt-0">
             • Programmed commercial application to transfer data from one GiftWrap database into another (C#, SQL Server)
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Applied predefined logic to analyze and modify the incoming data on the client (Typed DataSet, XML files) before bulk inserting it into the target database
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Displayed the process steps on the screen and logged them into the file
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             • Created the HTML report with the merge results and errors that have occurred during the data transfer
           </Typography>
         </Box>

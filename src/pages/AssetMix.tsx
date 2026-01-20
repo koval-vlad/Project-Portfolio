@@ -13,14 +13,14 @@ export default function AssetMix() {
           <FontAwesomeIcon icon={faChartPie} style={{ fontSize: '1.2rem' }} />
         </Typography>
 
-        <Box className="mt-3">
-          <Typography variant="p" className="mb-1">
+        <Box className="mt-3 [&_p:nth-of-type(even)]:text-primary">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Automated and standardized existing manual process of allocating funds to Asset Mix clients.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Implemented a module to automate the re-balance of Canadian private client accounts.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Created a workflow that provided notifications and approval process for orders created as a result of the asset mix re-balance exercise (C#, Sybase).
           </Typography>
         </Box>

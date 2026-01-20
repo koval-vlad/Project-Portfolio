@@ -13,56 +13,56 @@ export default function OrderManager() {
           <FontAwesomeIcon icon={faFileInvoiceDollar} style={{ fontSize: '1.2rem' }} />
         </Typography>
 
-        <Box className="mt-3">
-          <Typography variant="p" className="mb-1">
+        <Box className="mt-3 [&_p:nth-of-type(even)]:text-primary">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Led the development of the order management system designed for investment portfolio managers and specialists to check pre-trade compliance and send tickets to the trading system for execution (C# WinForms, Sybase/RapCache, Oracle).
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Introduced critical workflow changes in the compliance workspace by incorporating all XIP compliance into the override process. This has streamlined the communication between program traders and front-end compliance groups.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Improved performance of the compliance execution module by introducing multiple tasks running in parallel in order to process different compliance rules.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Added Xip Blotter in MOM that provided users with read only view of traded orders. Data for this real time view was coming from Xip message queue with visual notifications for new and updated orders.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Developed functionality allowing to create and execute Total Return Swap orders for PMs and traders. Introduced a swappable control in the trade form that encapsulated UI elements and behaviors specific to different asset classes. Created new execution modules to clearly separate business logic from UI.  The ability to add new swaps on the fly allowed for easy integration of other equity Swaps.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Automated the entry of Interest Rate Swaps (including zero-coupon Brazilian IRS) in Mom which were created previously with paper tickets and manual entry in Eagle. A Swap product management section was introduced to drive the automatic security setup when the IRS Swap order was created. Numerous modifications were made to the Order, Trade and Confirmation windows in MOM to support IRS Swaps.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Created Split/Combine Chain window to display a read-only graphical representation of the split/combine operations performed on the Swap order, along with the grid that had more detailed information.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Worked with Fixed Income developers to create Fincad library wrapper for MOM in order to calculate Swap accrued interest.
           </Typography>          
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Added performance and functional enhancements to the import orders module and to proposed orders which allow resuming program orders flow through Mom.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Modified order ticket in order to enable options trading. This made the orders for this asset class a subject to pre-trade compliance and reduced a risk to the firm.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Participated in the Security Ratings project that enabled users to receive warnings when creating orders for certain instruments that have a lower than preferred rating values.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Enabled MOM to send equity orders to CRD trading system. Added functionality that would allow MOM running simultaneously with both Xip and CRD during the adaptation period. Made sure the transition from Xip to Charles River application is seamless after the users are comfortable to switch to the new trading platform. Added ability to validate orders in CRD when compliance check is performed. Expanded MOM functionality to override CRD broker compliance fails.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Enhanced user visual experience by adding company specific application styles (Black, White, Green). Fixed saving/restoring of application configuration settings.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Saved send to trading statistics from all MOM windows in order to simplify performance monitoring.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Speeded up application start time by code restructuring and parallel loading of cached data sets.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Made sure MOM workflow and functionality meets security standards and audit requirements by employing configurable role-based security features offered by MS Enterprise Library.
           </Typography>
-          <Typography variant="p" className="mb-1">
+          <Typography variant="p" className="mb-0 !mt-0">
             •	Updated Compliance Override SSRS report to properly handle GPM basket compliance fails.
           </Typography>
         </Box>

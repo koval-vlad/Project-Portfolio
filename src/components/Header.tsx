@@ -165,27 +165,27 @@ export default function Header() {
       <Box className={`fixed top-0 left-0 right-0 z-50 rounded-t-xl transition-transform duration-300 ease-in-out ${
         isHidden ? '-translate-y-full' : 'translate-y-0'
       }`}>
-        <Box className="flex justify-between items-center py-2 px-4 max-w-4xl mx-auto">
-          <Box className="w-12" />
+        <Box className="relative flex items-center justify-center py-2 px-4">
+          <Box className="flex justify-center">
+            <Box className="lg:hidden">
+              <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="text-foreground">
+                    <Menu className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="mobile-sidebar w-72 bg-background overflow-y-auto">
+                  <MobileNav currentPath={location.pathname} onClose={handleDrawerToggle} />
+                </SheetContent>
+              </Sheet>
+            </Box>
 
-          <Box className="lg:hidden">
-            <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-foreground">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="mobile-sidebar w-72 bg-background overflow-y-auto">
-                <MobileNav currentPath={location.pathname} onClose={handleDrawerToggle} />
-              </SheetContent>
-            </Sheet>
+            <Box className="hidden lg:block">
+              <DesktopNav currentPath={location.pathname} />
+            </Box>
           </Box>
 
-          <Box className="hidden lg:block">
-            <DesktopNav currentPath={location.pathname} />
-          </Box>
-
-          <div className="flex items-center gap-2 flex-shrink-0">
+          <div className="absolute right-4 flex items-center gap-2 flex-shrink-0">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
