@@ -58,14 +58,16 @@ export default function ModernHRDashboard() {
           An interactive Tableau dashboard providing comprehensive analytics for human resources management,
           including employee demographics, performance metrics, and organizational insights.
         </Typography>
-        <tableau-viz
-          id="tableauViz"
-          src="https://public.tableau.com/views/ModernHRDashboard_17655530147630/HRDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-          width="100%"
-          height="800px"
-          toolbar="bottom"
-          hide-tabs
-        ></tableau-viz>
+        <div className="myTableauViz" style={{ width: '100%', maxWidth: '1400px', marginLeft: 'auto', marginRight: 'auto' }}>
+          <tableau-viz
+            id="tableauViz"
+            src="https://public.tableau.com/views/ModernHRDashboard_17655530147630/HRDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+            width="100%"
+            height="800px"
+            toolbar="bottom"
+            hide-tabs
+          ></tableau-viz>
+        </div>
         <SVGSpriteViewerModal
           open={presentationOpen}
           onClose={() => setPresentationOpen(false)}
