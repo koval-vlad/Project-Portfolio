@@ -3,13 +3,15 @@ import { Typography } from '@/components/ui/typography';
 import { Paper } from '@/components/ui/paper';
 import { Divider } from '@/components/ui/divider';
 import { Button } from '@/components/ui/button';
-import DownloadIcon from '@mui/icons-material/Download';
+import LanguageIcon from '@mui/icons-material/Language';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Tooltip from '@/components/ui/tooltip';
 
 export default function Resume() {
   return (
     <Box className="px-0 py-2">
       <Paper elevation={2} className="p-4 rounded-xl bg-card/5">
-        <Box className="max-w-2xl mx-auto">
+        <Box className="max-w-6xl mx-auto">
           <Box className="text-center mb-3">
             <Typography variant="h4" as="h2" className="font-bold">
               Vlad Koval
@@ -17,6 +19,31 @@ export default function Resume() {
             <Typography variant="small" className="mt-0.5 text-muted-foreground">
               vkoval@gmail.com | MA
             </Typography>
+            <Box className="flex items-center justify-center gap-4 mt-1">
+              <Tooltip text="My Projects Website" placement="top">
+                <a
+                  href="https://koval-vlad-portfolio.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Website"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <LanguageIcon className="w-5 h-5" />
+                </a>
+              </Tooltip>
+
+              <Tooltip text="My LinkedIn Profile" placement="bottom">
+                <a
+                  href="https://www.linkedin.com/in/vlad-koval-614976a4/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <LinkedInIcon className="w-5 h-5" />
+                </a>
+              </Tooltip>
+            </Box>
             <Button
               variant="super3d"
               size="sm"
@@ -34,7 +61,7 @@ export default function Resume() {
 
           <Box>
             <Typography variant="h6" className="font-bold">SUMMARY</Typography>
-            <Typography variant="p" className="mt-1 text-foreground whitespace-pre-line">
+            <Typography variant="p" className="mb-0 !mt-0">
               Enterprise level Application Development professional with working experience in Financial/Investment Management Software
               Industry. Proficient in application and database development with solid understanding of software architecture and design
               principles. Excellent problem-solving and debugging, communication and collaboration as well as customer support skills.
@@ -42,10 +69,11 @@ export default function Resume() {
             <br />
             <Typography variant="h6" className="font-bold mt-3">TECHNICAL SKILLS</Typography>
             <Box component="ul" sx={{ pl: 3, mt: 1 }}>
-              <li><strong>Programming languages:</strong> C#, SQL, PL/SQL, VB.NET, VB6, VB Script, JavaScript, CSS, HTML</li>
-              <li><strong>Technologies:</strong> .NET Core, WPF, gRPC, Web API, WinForms, WebForms, WCF/Windows Services, ADO.NET, LINQ, Blazor, ASP.NET Web Services, ASP, IBM and MS MQ, ASP.NET Core, REST API, React, Infragistics Controls, Crystal Reports, SSRS Reports, SOAP, JSON, XML, MSTest, DataDog</li>
-              <li><strong>Databases:</strong> SQL Server, Oracle, Sybase, InterSystems Cache</li>
-              <li><strong>Development Tools:</strong> MS Visual Studio, SQL Server Management Studio, Rapid SQL, Toad for Oracle, MS Visio, IIS, SMTP, VS Code</li>
+              <li><strong>Programming languages:</strong> Python,C#, SQL, PL/SQL, VB.NET, VB6, VB Script, JavaScript, CSS, HTML</li>
+              <li><strong>Technologies:</strong> Reflex, Tkinter, .NET Core, WPF, gRPC, Web API, WinForms, WebForms, WCF/Windows Services, ADO.NET, LINQ, Blazor, ASP.NET Web Services, ASP, IBM and MS MQ, ASP.NET Core, REST API, React, Infragistics Controls, Tableau, Crystal Reports, SSRS Reports, SOAP, JSON, XML, MSTest, DataDog</li>
+              <li><strong>Databases:</strong> SQL Server, Oracle, Sybase, InterSystems Cache, MS Access</li>
+              <li><strong>AI Assisted Tools:</strong> Cursor, GitHub Copilot, Lovable, Bolt</li>
+              <li><strong>Development Tools:</strong> PyCharm, MS Visual Studio, VS Code, SQL Server Management Studio, Rapid SQL, Toad for Oracle, MS Visio, IIS, SMTP</li>
               <li><strong>CI/CD Software:</strong> Azure DevOps, TeamCity, Git, BitBucket, Jira, Confluence, Jenkins, Nexus, UrbanCode Deploy, SonarQube, TFS</li>
               <li><strong>Methodology/Architecture:</strong> Agile, Scrum, Waterfall, Microservices, Plugins, MVVM, MVC, API, Dependency Injection</li>
               <li><strong>APIs/Libraries:</strong> Charles River API/Plugins, Fincad API, MS Entity Framework</li>
@@ -54,6 +82,17 @@ export default function Resume() {
             <br />
             <Typography variant="h6" className="font-bold mt-3">EXPERIENCE</Typography>
 
+            <Box sx={{ mt: 1 }}>
+              <Typography variant="subtitle1" className="font-bold">Software Developer | Independent, Sharon, MA | 2025 – 2026</Typography>
+              <Box component="ul" sx={{ pl: 3, mt: 1 }}>
+                <li>Building and maintaining multiple software projects while completing data science coursework.</li>
+                <li>Leveraging AI development tools (Cursor, Lovable, Bolt, GitHub Copilot) to accelerate prototyping and improve code quality.</li>
+                <li>Developed a modern, interactive portfolio website showcasing professional projects, education, and skills. Built with React, TypeScript, Tailwind CSS and a comprehensive set of modern web technologies. It features responsive navigation, SVG slideshow with fade-in effects, PDF and Excel viewers, several themes with light/darks modes and animation library effects.</li>
+                <li>Implemented Email Privacy Redactor AI application that automatically detects and redacts sensitive information from both email text and attached images before sending. Built with modern Python web framework (Reflex) and AI technologies (Groq and OCR.space APIs), it ensures your emails remain compliant with privacy regulations while maintaining readability. Supports multiple email providers: Mailpit, Resend API, and SendGrid.</li>
+                <li>Created several Tableau dashboards providing comprehensive analytics for human resources management, including employee demographics, performance metrics, and organizational insights, featuring interactive visualizations and key performance indicators for HR decision making. Delivered interactive data story exploring the Titanic disaster through passenger data, survival rates, and demographic analysis.</li>
+              </Box>
+            </Box>
+            <br />
             <Box sx={{ mt: 1 }}>
               <Typography variant="subtitle1" className="font-bold">Senior Software Developer | Dynamo Software, Watertown, MA | 2024 – 2025</Typography>
               <Box component="ul" sx={{ pl: 3, mt: 1 }}>
@@ -65,7 +104,7 @@ export default function Resume() {
                 <li>Provided resolution for tenant issues reported by client support and deployment teams from production and staging application slots.</li>
               </Box>
             </Box>
-
+            <br />
             <Box sx={{ mt: 2 }}>
               <Typography variant="subtitle1" className="font-bold">Software Engineering Architect | MFS Investment Management, Boston, MA | 2007 – 2023</Typography>
               <Box component="ul" sx={{ pl: 3, mt: 1 }}>
@@ -90,7 +129,7 @@ export default function Resume() {
                 <li>Focused on product quality and risk mitigation by addressing issues discovered by SonarQube and IBM AppScan Jenkins plugins.</li>
               </Box>
             </Box>
-
+            <br />
             <Box sx={{ mt: 2 }}>
               <Typography variant="subtitle1" className="font-bold">Internet Developer | PG Calc Incorporated, Cambridge, MA | 2000 – 2007</Typography>
               <Box component="ul" sx={{ pl: 3, mt: 1 }}>
@@ -110,16 +149,42 @@ export default function Resume() {
                 <li>Extended company site shopping capabilities to promote new products and introduce discounted prices for the existing ones.</li>
               </Box>
             </Box>
-
-            <Divider className="my-2" />
             <br />
-            <Typography variant="h6" className="font-bold">EDUCATION</Typography>
-            <Typography variant="p" className="mb-0 !mt-0">B.A. in English Language and Literature | Zaporizhzhia State University, Ukraine</Typography>
-            <Typography variant="p" className="mb-0 !mt-0">Contemporary Applications Development Certification | Computer Learning Center, MA</Typography>
-
-            <Typography variant="h6" className="font-bold mt-3">CERTIFICATIONS</Typography>
+            <Box sx={{ mt: 2 }}>
+            <Typography variant="h6" className="font-bold">SECONDARY EDUCATION</Typography> 
+            <Typography variant="p" className="mb-0 !mt-0 font-bold">Kubernetes with Cloud and Data Science Certification | UNIQUE System Skills, NH</Typography>
+              <Box component="ul" sx={{ pl: 3, mt: 1 }}>
+                <li>Data Science with Python</li>               
+                <li>Kubernetes</li>               
+                <li>AWS Solution Architect</li>               
+                <li>Python</li>               
+                <li>Tableau</li>               
+                <li>Docker Certified Associate</li>               
+              </Box>
+              <br />
+              <Typography variant="p" className="mb-0 !mt-0 font-bold">Contemporary Applications Development Certification | Computer Learning Center, MA</Typography>
+              <Box component="ul" sx={{ pl: 3, mt: 1 }}>
+                <li>Object-oriented programming using C++</li>               
+                <li>Visual Basic</li>               
+                <li>Database programming using MS Access</li>               
+                <li>C programming in UNIX</li>               
+                <li>DOS for programmers</li>                               
+              </Box>
+              <br />
+              <Typography variant="p" className="mb-0 !mt-0 font-bold">B.A. in English Language and Literature | Zaporizhzhia State University, Ukraine</Typography>
+              <Box component="ul" sx={{ pl: 3, mt: 1 }}>
+                <li>Theoretical Linguistics</li>               
+                <li>Literature and Culture</li>               
+                <li>Translation and Interpretation</li>               
+                <li>Pedagogy and Teaching Methodology</li>               
+                <li>Academic and Research Skills</li>                               
+              </Box>
+            </Box>
+            <br />
+            <Typography variant="h6" className="font-bold mt-3">PROFESSIONAL DEVELOPMENT</Typography>
             <Box component="ul" sx={{ pl: 3, mt: 1 }}>
               <li>Oracle University — Analytic SQL for Data Warehousing</li>
+              <li>Oracle University — SQL Tuning for Developers</li>
               <li>Pluralsight — Build Rich Web Applications with C# using Blazor</li>
               <li>Pluralsight — Building a RESTful API with ASP.NET Core</li>
               <li>Pluralsight — Building an Async API with ASP.NET Core</li>
@@ -130,7 +195,7 @@ export default function Resume() {
               <li>Pluralsight — React - The Big Picture</li>
               <li>Pluralsight — Using gRPC in ASP.NET Core</li>
               <li>Pluralsight — WPF MVVM in Depth</li>
-          </Box>
+            </Box>
           </Box>
         </Box>
       </Paper>
