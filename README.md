@@ -1,4 +1,4 @@
-# My Portfolio
+# Project Portfolio
 
 A modern, interactive portfolio website showcasing professional projects, education, and skills. Built with React, TypeScript and a comprehensive set of modern web technologies.
 
