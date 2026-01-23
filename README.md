@@ -1,5 +1,7 @@
 # Project Portfolio
 
+![Project Portfolio](src/assets/react-project-portfolio.svg)
+
 A modern, interactive portfolio website showcasing professional projects, education, and skills. Built with React, TypeScript and a comprehensive set of modern web technologies.
 
 **Live Demo:** [https://koval-vlad-portfolio.vercel.app/](https://koval-vlad-portfolio.vercel.app/)
@@ -127,9 +129,19 @@ Four distinct color themes with light/dark mode support:
 - **Auto-Hide Header**: Header hides on scroll down, shows on scroll up
 - **Active Route Highlighting**: Current page is visually indicated
 - **Smooth Animations**: Fade-in effects for menu items
+- **React Menu**: Dedicated React menu section with Project Portfolio submenu
+
+### 🏠 Enhanced Home Page
+- **Auto-Expanded Accordions**: Key technical skill categories (Programming languages, Technologies, Databases, AI Assisted Tools) are automatically expanded on page load
+- **Code Preview Button**: Quick access to GitHub repository from the home page header
+- **Centered Title Layout**: Professional layout with centered title and right-aligned action buttons
+- **Interactive Skill Cards**: Expandable/collapsible accordion cards showcasing technical skills with visual icons
 
 ### 📄 Project Showcases
 Organized by technology stack:
+
+- **React Projects**
+  - Project Portfolio (this application - interactive portfolio website)
 
 - **Tableau Projects**
   - Modern HR Dashboard (interactive Tableau embed)
@@ -171,7 +183,9 @@ Comprehensive education showcase:
 ## 🗂️ Site Structure
 
 ```
-/                           # Home page with weather effects
+/                           # Home page with weather effects and technical skills showcase
+/react/
+  └── project-portfolio     # This portfolio application (links to home)
 /tableau/
   ├── modern-hr-dashboard    # Interactive Tableau dashboard
   ├── hr-analytics-dashboard
@@ -272,6 +286,16 @@ The project is configured for deployment on Vercel:
 2. Add route to `src/App.tsx`
 3. Add project data to `src/components/ProjectSubmenu.tsx` and `MobileProjectSubmenu.tsx`
 4. Add project image to `src/assets/`
+5. For projects linking to home page (route: ''), the navigation handler will automatically route to '/'
+
+### Recent Updates
+
+- **React Menu Added**: New React menu section in navigation between Tableau and .NET
+- **Project Portfolio Submenu**: Added Project Portfolio as a React project showcasing this application
+- **Home Page Enhancements**: 
+  - Auto-expanded accordion cards for key skill categories
+  - Code Preview button for quick GitHub access
+  - Improved layout with centered title
 
 ## 📝 License
 

@@ -28,6 +28,9 @@ import vbPgcalcDbManager from '../assets/vb-pgcalc-db-manager.svg';
 // Python images
 import pythonEmailRedactorAi from '../assets/python-email-redactor-ai.svg';
 
+// React images
+import reactProjectPortfolio from '../assets/react-project-portfolio.svg';
+
 interface ProjectSubmenuProps {
   category: string;
   onClose: () => void;
@@ -65,6 +68,9 @@ const projectData: Record<string, Project[]> = {
   python: [
     { id: 1, title: 'Email Redactor AI', image: pythonEmailRedactorAi, route: 'email-redactor-ai' },
   ],
+  react: [
+    { id: 1, title: 'Project Portfolio', image: reactProjectPortfolio, route: '' },
+  ],
 };
 
 export default function ProjectSubmenu({ category, onClose }: ProjectSubmenuProps) {
@@ -91,7 +97,12 @@ export default function ProjectSubmenu({ category, onClose }: ProjectSubmenuProp
   }, [category, projects.length]);
 
   const handleProjectClick = (project: Project) => {
-    navigate(`/${category}/${project.route}`);
+    // If route is empty, navigate to home page
+    if (project.route === '') {
+      navigate('/');
+    } else {
+      navigate(`/${category}/${project.route}`);
+    }
     onClose();
   };
 

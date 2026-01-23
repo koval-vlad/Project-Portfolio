@@ -9,10 +9,19 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
     const [weather, setWeather] = useState<'sunny' | 'rain' | 'snow'>('sunny');
-    const [expandedTechCategories, setExpandedTechCategories] = useState<Record<number, boolean>>({ 0: true });
+    const [expandedTechCategories, setExpandedTechCategories] = useState<Record<number, boolean>>({ 
+        0: true, // Programming languages
+        1: true, // Technologies
+        2: true, // Databases
+        3: true, // AI Assisted Tools
+    });
+    const handleCodePreview = () => {
+        window.open('https://github.com/koval-vlad/Project-Portfolio', '_blank', 'noopener,noreferrer');
+    };
 
     useEffect(() => {
         const savedWeather = localStorage.getItem('homeWeather') as 'sunny' | 'rain' | 'snow';
@@ -49,9 +58,22 @@ export default function Home() {
             <ParticleBackground className="absolute inset-0 z-0" weather={weather} />
             <Box className="relative z-10">
                 <Paper elevation={2} className="p-2 rounded-xl">
-                    <Typography variant="h4" as="h1" className="mb-2 text-center py-4">
-                        Welcome to Project Portfolio
-                    </Typography>
+                    <Box className="mb-2 flex items-center py-2 relative">
+                        <Box className="flex-1"></Box>
+                        <Typography variant="h4" as="h1" className="text-center flex-1">
+                            Welcome to Project Portfolio
+                        </Typography>
+                        <Box className="flex-1 flex justify-end">
+                            <Button
+                                variant="super3d"
+                                size="sm"
+                                onClick={handleCodePreview}
+                                className="text-xs h-7 px-2"
+                            >
+                                Code Preview
+                            </Button>
+                        </Box>
+                    </Box>                    
                     <Typography variant="p" className="mb-4 px-12">
                         I am an Enterprise level Application Development professional with working experience in Financial/Investment Management Software
                         Industry. Proficient in application and database development with solid understanding of software architecture and design
