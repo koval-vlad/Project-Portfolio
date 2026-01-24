@@ -10,6 +10,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { Code } from 'lucide-react';
 
 export default function Home() {
     const [weather, setWeather] = useState<'sunny' | 'rain' | 'snow'>('sunny');
@@ -68,8 +69,9 @@ export default function Home() {
                                 variant="super3d"
                                 size="sm"
                                 onClick={handleCodePreview}
-                                className="text-xs h-7 px-2"
+                                className="text-xs h-7 px-2 flex items-center gap-1.5"
                             >
+                                <Code className="h-3.5 w-3.5" />
                                 Code Preview
                             </Button>
                         </Box>

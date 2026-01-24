@@ -1,7 +1,6 @@
 import { FuturisticCard } from '@/components/ui/futuristic-card';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Typography } from '@/components/ui/typography';
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import usaFlag from '../assets/usa-flag.svg';
@@ -47,10 +46,17 @@ const CertificateCard = ({ certificateImage, topText, bottomText, onImageClick }
       </div>
 
       {/* Bottom Text - Always Visible */}
-      <div className="p-2 [&_p:nth-of-type(even)]:text-primary">
-        <Typography variant="certificate">
-          {bottomText}
-        </Typography>
+      <div className="p-2 [&_li:nth-of-type(even)]:text-primary">
+        <ul className="triangle-list mt-2">
+          {bottomText
+            .split(/(?<=\.)\s+/)
+            .filter((s) => s.trim().length > 0)
+            .map((segment, idx) => (
+              <li key={idx} className="text-foreground text-sm leading-relaxed text-left">
+                {segment.trim()}
+              </li>
+            ))}
+        </ul>
       </div>
     </FuturisticCard>
   );

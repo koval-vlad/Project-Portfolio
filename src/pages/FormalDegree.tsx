@@ -57,18 +57,15 @@ export default function FormalDegree() {
         </div>
 
         {/* Coursework Description */}
-        <div className="p-3 [&_p:nth-of-type(even)]:text-primary">
-          {coursework.map((item, index) => (
-            <p
-              key={index}
-              className={`text-left text-foreground text-xs leading-relaxed ${index < coursework.length - 1 ? 'mb-1' : ''}`}
-            >
-              <span className="font-bold">
-                {item.title}:
-              </span>{' '}
-              {item.description}
-            </p>
-          ))}
+        <div className="p-3 [&_li:nth-of-type(even)]:text-primary">
+          <ul className="triangle-list mt-2">
+            {coursework.map((item, index) => (
+              <li key={index} className="text-foreground text-xs leading-relaxed">
+                <span className="font-bold">{item.title}:</span>{' '}
+                {item.description}
+              </li>
+            ))}
+          </ul>
         </div>
       </FuturisticCard>
     </div>

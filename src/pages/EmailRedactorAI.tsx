@@ -3,10 +3,14 @@ import { Typography } from '@/components/ui/typography';
 import { Paper } from '@/components/ui/paper';
 import { Button } from '@/components/ui/button';
 import { EmailOutlined } from '@mui/icons-material';
+import { Code, ExternalLink } from 'lucide-react';
 
 export default function EmailRedactorAI() {
   const handleCodePreview = () => {
     window.open('https://github.com/koval-vlad/EmailPrivacyRedactorAI', '_blank', 'noopener,noreferrer');
+  };
+  const handleHostView = () => {
+    window.open('https://email-privacy-redactor-ai-blue-wood.reflex.run/', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -17,14 +21,26 @@ export default function EmailRedactorAI() {
             Email Redactor AI<sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>Personal</sup>
             <EmailOutlined sx={{ fontSize: '1.5rem' }} />
           </span>
-          <Button
-            variant="super3d"
-            size="sm"
-            onClick={handleCodePreview}
-            className="text-xs h-7 px-2"
-          >
-            Code Preview
-          </Button>
+          <span className="flex items-center gap-2">
+            <Button
+              variant="super3d"
+              size="sm"
+              onClick={handleCodePreview}
+              className="text-xs h-7 px-2 flex items-center gap-1.5"
+            >
+              <Code className="h-3.5 w-3.5" />
+              Code Preview
+            </Button>
+            <Button
+              variant="super3d"
+              size="sm"
+              onClick={handleHostView}
+              className="text-xs h-7 px-2 flex items-center gap-1.5"
+            >
+              <ExternalLink className="h-3.5 w-3.5" />
+              Host View
+            </Button>
+          </span>
         </Typography>
         <Typography variant="p" className="mb-3">
           AI-powered email privacy tool that automatically redacts sensitive information 

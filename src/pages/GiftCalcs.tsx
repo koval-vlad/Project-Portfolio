@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import TableViewIcon from '@mui/icons-material/TableView';
+import { ExternalLink } from 'lucide-react';
 
 export default function GiftCalcs() {
   return (
@@ -19,8 +20,9 @@ export default function GiftCalcs() {
             variant="super3d"
             size="sm"
             onClick={() => window.open('https://www.pgcalc.com/service/giftcalcs-demo', '_blank')}
-            className="text-xs h-7 px-2"
+            className="text-xs h-7 px-2 flex items-center gap-1.5"
           >
+            <ExternalLink className="h-3.5 w-3.5" />
             View GiftCalcs
           </Button>
         </Typography>

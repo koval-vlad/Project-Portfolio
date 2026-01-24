@@ -12,6 +12,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { useState } from 'react';
 import Tooltip from '@/components/ui/tooltip';
+import { Download } from 'lucide-react';
 
 interface ExperienceEntry {
   title: string;
@@ -230,8 +231,9 @@ export default function Resume() {
                 link.download = 'Vlad_Koval_Resume.docx';
                 link.click();
               }}
-              className="mt-2"
+              className="mt-2 flex items-center gap-1.5"
             >
+              <Download className="h-4 w-4" />
               DOWNLOAD WORD
             </Button>        
           </Box>

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTornado } from '@fortawesome/free-solid-svg-icons';
+import { Presentation } from 'lucide-react';
 import SVGSpriteViewerModal from '../components/SVGSpriteViewerModal';
 import ExcelViewer from '../components/ExcelViewer';
 import hurricanePdf from '/docs/Hurricane-Presentation.pdf';
@@ -30,8 +31,9 @@ export default function HurricaneReport() {
             variant="super3d"
             size="sm"
             onClick={() => setPresentationOpen(true)}
-            className="text-xs h-7 px-2"
+            className="text-xs h-7 px-2 flex items-center gap-1.5"
           >
+            <Presentation className="h-3.5 w-3.5" />
             View Presentation
           </Button>
         </Typography>

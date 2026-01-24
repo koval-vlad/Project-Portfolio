@@ -5,10 +5,14 @@ import { Button } from '@/components/ui/button';
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShip } from '@fortawesome/free-solid-svg-icons';
+import { Code, ExternalLink } from 'lucide-react';
 
 export default function TitanicSurvivorStory() {
   const handleCodePreview = () => {
     window.open('https://github.com/koval-vlad/Tableau-Projects/tree/master/Who%20Survived%20Titanic%20Tragedy%20Story', '_blank', 'noopener,noreferrer');
+  };
+  const handleHostView = () => {
+    window.open('https://public.tableau.com/app/profile/vlad.koval/viz/WhoSurvivedTitanicTragedyStory/WhoSurvivedTitanicTragedyStory', '_blank', 'noopener,noreferrer');
   };
 
   useEffect(() => {
@@ -31,14 +35,26 @@ export default function TitanicSurvivorStory() {
             Titanic Survivor Story<sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>Personal</sup>
             <FontAwesomeIcon icon={faShip} style={{ fontSize: '1.2rem' }} />
           </span>
-          <Button
-            variant="super3d"
-            size="sm"
-            onClick={handleCodePreview}
-            className="text-xs h-7 px-2"
-          >
-            Code Preview
-          </Button>
+          <span className="flex items-center gap-2">
+            <Button
+              variant="super3d"
+              size="sm"
+              onClick={handleCodePreview}
+              className="text-xs h-7 px-2 flex items-center gap-1.5"
+            >
+              <Code className="h-3.5 w-3.5" />
+              Code Preview
+            </Button>
+            <Button
+              variant="super3d"
+              size="sm"
+              onClick={handleHostView}
+              className="text-xs h-7 px-2 flex items-center gap-1.5"
+            >
+              <ExternalLink className="h-3.5 w-3.5" />
+              Host View
+            </Button>
+          </span>
         </Typography>
         <Typography variant="p" className="mb-3">
           An interactive data story exploring the Titanic disaster through passenger data,
