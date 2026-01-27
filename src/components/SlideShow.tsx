@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState, useCallback, useRef, type ComponentProps } from 'react';
-import { TransitionType, transitionVariants } from './SVGSpriteSlideshow';
+import { TransitionType, transitionVariants } from '@/lib/slideshow-transitions';
 
 const SWIPE_THRESHOLD_PX = 50;
 

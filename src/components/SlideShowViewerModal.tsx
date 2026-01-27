@@ -24,7 +24,7 @@ import {
   Minimize,
   Shuffle,
 } from 'lucide-react';
-import { TransitionType, transitionVariants } from './SVGSpriteSlideshow';
+import { TransitionType, transitionVariants } from '@/lib/slideshow-transitions';
 import SlideShow from './SlideShow';
 import DynamicBackground from './DynamicBackground';
 

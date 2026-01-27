@@ -16,8 +16,7 @@ export default function HurricaneReport() {
   const excelSrc = `https://view.officeapps.live.com/op/embed.aspx?src=${window.location.origin}/docs/Hurricanes-Report.xlsx?version=${new Date().getTime()}`;
   const slideshowImageCount = 28;
 
-  // Note: SVG files are served from public/images/hurricane-presentation/
-  // They are loaded dynamically by SVGSpriteViewerModal
+  // Slides are served from public/images/hurricane-presentation/ and loaded by SlideShowViewerModal.
 
   return (
     <Box className="px-0 py-2">
