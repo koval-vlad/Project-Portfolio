@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import {
@@ -51,6 +51,8 @@ export default function SlideShowViewerModal({
   const [isPresenting, setIsPresenting] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [scale, setScale] = useState<number>(1.5);
+  const [translateX, setTranslateX] = useState<number>(0);
+  const [translateY, setTranslateY] = useState<number>(0);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(true);
   const [transitionType, setTransitionType] = useState<TransitionType>('random');
   const [slideInterval, setSlideInterval] = useState<number>(10);
@@ -66,12 +68,21 @@ export default function SlideShowViewerModal({
       setIsPresenting(false);
       setIsPlaying(false);
       setScale(1.0);
+      setTranslateX(0);
+      setTranslateY(0);
       setIsFullscreen(false);
       if (document.fullscreenElement) {
         document.exitFullscreen().catch((err) => console.error(err));
       }
     }
   }, [open]);
+
+  useEffect(() => {
+    if (scale <= 1) {
+      setTranslateX(0);
+      setTranslateY(0);
+    }
+  }, [scale]);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -103,15 +114,31 @@ export default function SlideShowViewerModal({
   }, [isPlaying, isPresenting, slideCount, slideInterval]);
 
   const goToPrevSlide = () => {
-    if (currentSlideIndex > 0) setCurrentSlideIndex(currentSlideIndex - 1);
+    if (currentSlideIndex > 0) {
+      setCurrentSlideIndex(currentSlideIndex - 1);
+      setTranslateX(0);
+      setTranslateY(0);
+    }
   };
 
   const goToNextSlide = () => {
-    if (currentSlideIndex < slideCount - 1) setCurrentSlideIndex(currentSlideIndex + 1);
+    if (currentSlideIndex < slideCount - 1) {
+      setCurrentSlideIndex(currentSlideIndex + 1);
+      setTranslateX(0);
+      setTranslateY(0);
+    }
   };
 
-  const goToFirstSlide = () => setCurrentSlideIndex(0);
-  const goToLastSlide = () => setCurrentSlideIndex(slideCount - 1);
+  const goToFirstSlide = () => {
+    setCurrentSlideIndex(0);
+    setTranslateX(0);
+    setTranslateY(0);
+  };
+  const goToLastSlide = () => {
+    setCurrentSlideIndex(slideCount - 1);
+    setTranslateX(0);
+    setTranslateY(0);
+  };
 
   const handleDownload = () => {
     if (pdfUrl) {
@@ -137,6 +164,8 @@ export default function SlideShowViewerModal({
     setIsPresenting(true);
     setIsPlaying(true);
     setCurrentSlideIndex(0);
+    setTranslateX(0);
+    setTranslateY(0);
   };
 
   const stopPresentation = () => {
@@ -148,6 +177,11 @@ export default function SlideShowViewerModal({
 
   const zoomIn = () => setScale((prev) => Math.min(prev + 0.25, 3.0));
   const zoomOut = () => setScale((prev) => Math.max(prev - 0.25, 0.5));
+
+  const handlePan = useCallback((deltaX: number, deltaY: number) => {
+    setTranslateX((prev) => prev + deltaX);
+    setTranslateY((prev) => prev + deltaY);
+  }, []);
 
   const toggleFullscreen = async () => {
     try {
@@ -449,9 +483,8 @@ export default function SlideShowViewerModal({
               >
                 <div
                   style={{
-                    transform: `scale(${scale})`,
+                    transform: `translate(${translateX / scale}px, ${translateY / scale}px) scale(${scale})`,
                     transformOrigin: 'center center',
-                    transition: 'transform 0.2s ease-in-out',
                     width: '100%',
                     height: '100%',
                     display: 'flex',
@@ -466,6 +499,7 @@ export default function SlideShowViewerModal({
                     className="w-full h-full"
                     scale={scale}
                     onPinchZoom={setScale}
+                    onPan={scale > 1 ? handlePan : undefined}
                     onSwipeLeft={currentSlideIndex < slideCount - 1 ? goToNextSlide : undefined}
                     onSwipeRight={currentSlideIndex > 0 ? goToPrevSlide : undefined}
                   />

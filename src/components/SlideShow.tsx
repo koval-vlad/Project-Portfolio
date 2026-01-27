@@ -23,6 +23,7 @@ interface SlideShowProps {
   onSwipeRight?: () => void;
   scale?: number;
   onPinchZoom?: (scale: number) => void;
+  onPan?: (deltaX: number, deltaY: number) => void;
 }
 
 export default function SlideShow({
@@ -34,12 +35,16 @@ export default function SlideShow({
   onSwipeRight,
   scale = 1,
   onPinchZoom,
+  onPan,
 }: SlideShowProps) {
   const touchStartX = useRef<number>(0);
   const touchStartY = useRef<number>(0);
+  const lastTouchX = useRef<number>(0);
+  const lastTouchY = useRef<number>(0);
   const pinchStartDistance = useRef<number>(0);
   const pinchStartScale = useRef<number>(1);
   const isPinching = useRef<boolean>(false);
+  const isPanning = useRef<boolean>(false);
   const [previousSlide, setPreviousSlide] = useState<number>(currentSlide);
   const [lastUsedTransition, setLastUsedTransition] = useState<string>('');
   const [activeTransition, setActiveTransition] = useState(() => {
@@ -97,11 +102,17 @@ export default function SlideShow({
   const handleTouchStart = useCallback(
     (e: React.TouchEvent) => {
       if (e.touches.length === 1) {
-        touchStartX.current = e.touches[0].clientX;
-        touchStartY.current = e.touches[0].clientY;
+        const x = e.touches[0].clientX;
+        const y = e.touches[0].clientY;
+        touchStartX.current = x;
+        touchStartY.current = y;
+        lastTouchX.current = x;
+        lastTouchY.current = y;
         isPinching.current = false;
+        isPanning.current = false;
       } else if (e.touches.length === 2) {
         isPinching.current = true;
+        isPanning.current = false;
         pinchStartDistance.current = getTouchDistance(e.nativeEvent.touches);
         pinchStartScale.current = scale;
       }
@@ -119,9 +130,22 @@ export default function SlideShow({
           const newScale = Math.min(3, Math.max(0.5, pinchStartScale.current * ratio));
           onPinchZoom(newScale);
         }
+        return;
+      }
+      if (e.touches.length === 1 && onPan) {
+        const x = e.touches[0].clientX;
+        const y = e.touches[0].clientY;
+        const deltaX = x - lastTouchX.current;
+        const deltaY = y - lastTouchY.current;
+        if (Math.abs(deltaX) > 1 || Math.abs(deltaY) > 1) {
+          isPanning.current = true;
+          onPan(deltaX, deltaY);
+        }
+        lastTouchX.current = x;
+        lastTouchY.current = y;
       }
     },
-    [onPinchZoom]
+    [onPinchZoom, onPan]
   );
 
   const handleTouchEnd = useCallback(
@@ -129,7 +153,7 @@ export default function SlideShow({
       if (e.touches.length < 2) {
         isPinching.current = false;
       }
-      if (e.changedTouches.length !== 1 || isPinching.current) return;
+      if (e.changedTouches.length !== 1 || isPinching.current || isPanning.current) return;
       const touch = e.changedTouches[0];
       const deltaX = touch.clientX - touchStartX.current;
       const deltaY = touch.clientY - touchStartY.current;
