@@ -464,6 +464,10 @@ export default function SlideShowViewerModal({
                     imageSrc={currentImageSrc}
                     transitionType={transitionType}
                     className="w-full h-full"
+                    scale={scale}
+                    onPinchZoom={setScale}
+                    onSwipeLeft={currentSlideIndex < slideCount - 1 ? goToNextSlide : undefined}
+                    onSwipeRight={currentSlideIndex > 0 ? goToPrevSlide : undefined}
                   />
                 </div>
               </div>

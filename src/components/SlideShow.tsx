@@ -1,14 +1,28 @@
 "use client";
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef, type ComponentProps } from 'react';
 import { TransitionType, transitionVariants } from './SVGSpriteSlideshow';
+
+const SWIPE_THRESHOLD_PX = 50;
+
+function getTouchDistance(touches: TouchList): number {
+  if (touches.length < 2) return 0;
+  const a = touches.item(0);
+  const b = touches.item(1);
+  if (!a || !b) return 0;
+  return Math.hypot(b.clientX - a.clientX, b.clientY - a.clientY);
+}
 
 interface SlideShowProps {
   currentSlide: number;
   imageSrc: string;
   transitionType?: TransitionType;
   className?: string;
+  onSwipeLeft?: () => void;
+  onSwipeRight?: () => void;
+  scale?: number;
+  onPinchZoom?: (scale: number) => void;
 }
 
 export default function SlideShow({
@@ -16,7 +30,16 @@ export default function SlideShow({
   imageSrc,
   transitionType = 'random',
   className = '',
+  onSwipeLeft,
+  onSwipeRight,
+  scale = 1,
+  onPinchZoom,
 }: SlideShowProps) {
+  const touchStartX = useRef<number>(0);
+  const touchStartY = useRef<number>(0);
+  const pinchStartDistance = useRef<number>(0);
+  const pinchStartScale = useRef<number>(1);
+  const isPinching = useRef<boolean>(false);
   const [previousSlide, setPreviousSlide] = useState<number>(currentSlide);
   const [lastUsedTransition, setLastUsedTransition] = useState<string>('');
   const [activeTransition, setActiveTransition] = useState(() => {
@@ -30,7 +53,7 @@ export default function SlideShow({
   const hasInitializedRandom = useRef(transitionType === 'random');
 
   const getRandomTransition = useCallback(
-    (isForward: boolean = true) => {
+    (_isForward: boolean = true) => {
       const allTransitions = transitionVariants.filter((t) => t.name !== 'random');
       const availableTransitions = allTransitions.filter((t) => t.name !== lastUsedTransition);
       const transitionsToChooseFrom =
@@ -49,8 +72,7 @@ export default function SlideShow({
       const shouldPickRandom = isSlideChange || !hasInitializedRandom.current;
 
       if (shouldPickRandom) {
-        const isForward = isSlideChange ? currentSlide > previousSlide : true;
-        const newTransition = getRandomTransition(isForward);
+        const newTransition = getRandomTransition(currentSlide > previousSlide);
         setActiveTransition(newTransition);
         hasInitializedRandom.current = true;
       }
@@ -72,15 +94,71 @@ export default function SlideShow({
     transition: { duration: 0.6, ease: 'easeInOut' as const },
   };
 
+  const handleTouchStart = useCallback(
+    (e: React.TouchEvent) => {
+      if (e.touches.length === 1) {
+        touchStartX.current = e.touches[0].clientX;
+        touchStartY.current = e.touches[0].clientY;
+        isPinching.current = false;
+      } else if (e.touches.length === 2) {
+        isPinching.current = true;
+        pinchStartDistance.current = getTouchDistance(e.nativeEvent.touches);
+        pinchStartScale.current = scale;
+      }
+    },
+    [scale]
+  );
+
+  const handleTouchMove = useCallback(
+    (e: React.TouchEvent) => {
+      if (e.touches.length === 2 && isPinching.current && onPinchZoom) {
+        e.preventDefault();
+        const dist = getTouchDistance(e.nativeEvent.touches);
+        if (pinchStartDistance.current > 0) {
+          const ratio = dist / pinchStartDistance.current;
+          const newScale = Math.min(3, Math.max(0.5, pinchStartScale.current * ratio));
+          onPinchZoom(newScale);
+        }
+      }
+    },
+    [onPinchZoom]
+  );
+
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      if (e.touches.length < 2) {
+        isPinching.current = false;
+      }
+      if (e.changedTouches.length !== 1 || isPinching.current) return;
+      const touch = e.changedTouches[0];
+      const deltaX = touch.clientX - touchStartX.current;
+      const deltaY = touch.clientY - touchStartY.current;
+      if (Math.abs(deltaX) < SWIPE_THRESHOLD_PX) return;
+      if (Math.abs(deltaY) > Math.abs(deltaX)) return;
+      if (deltaX < 0) {
+        onSwipeLeft?.();
+      } else {
+        onSwipeRight?.();
+      }
+    },
+    [onSwipeLeft, onSwipeRight]
+  );
+
   return (
-    <div className={`relative w-full h-full overflow-hidden ${className}`}>
+    <div
+      className={`relative w-full h-full overflow-hidden touch-none ${className}`}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      style={{ touchAction: 'none' }}
+    >
       <AnimatePresence>
         <motion.div
           key={`${currentSlide}-${activeTransition.name}`}
           className="absolute inset-0 flex items-center justify-center"
-          initial={transitionConfig.initial}
-          animate={transitionConfig.animate}
-          exit={transitionConfig.exit}
+          initial={transitionConfig.initial as ComponentProps<typeof motion.div>['initial']}
+          animate={transitionConfig.animate as ComponentProps<typeof motion.div>['animate']}
+          exit={transitionConfig.exit as ComponentProps<typeof motion.div>['exit']}
           transition={transitionConfig.transition}
           style={{ willChange: 'transform, opacity, clip-path' }}
         >
