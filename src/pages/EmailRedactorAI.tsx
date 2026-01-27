@@ -29,7 +29,7 @@ export default function EmailRedactorAI() {
               className="text-xs h-7 px-2 flex items-center gap-1.5"
             >
               <Code className="h-3.5 w-3.5" />
-              Code Preview
+              Code
             </Button>
             <Button
               variant="super3d"
@@ -38,7 +38,7 @@ export default function EmailRedactorAI() {
               className="text-xs h-7 px-2 flex items-center gap-1.5"
             >
               <ExternalLink className="h-3.5 w-3.5" />
-              Host View
+              Host
             </Button>
           </span>
         </Typography>

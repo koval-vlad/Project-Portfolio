@@ -1,13 +1,18 @@
 import { Box } from '@/components/ui/box';
 import { Paper } from '@/components/ui/paper';
 import { Typography } from '@/components/ui/typography';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShip } from '@fortawesome/free-solid-svg-icons';
-import { Code, ExternalLink } from 'lucide-react';
+import { Code, ExternalLink, Presentation } from 'lucide-react';
+import SlideShowViewerModal from '../components/SlideShowViewerModal';
+import titanicPresentationPdf from '/docs/Titanic-Presentation.pdf';
 
 export default function TitanicSurvivorStory() {
+  const [presentationOpen, setPresentationOpen] = useState(false);
+  const slideshowImageCount = 19;
+
   const handleCodePreview = () => {
     window.open('https://github.com/koval-vlad/Tableau-Projects/tree/master/Who%20Survived%20Titanic%20Tragedy%20Story', '_blank', 'noopener,noreferrer');
   };
@@ -35,7 +40,16 @@ export default function TitanicSurvivorStory() {
             Titanic Survivor Story<sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>Personal</sup>
             <FontAwesomeIcon icon={faShip} style={{ fontSize: '1.2rem' }} />
           </span>
-          <span className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
+            <Button
+              variant="super3d"
+              size="sm"
+              onClick={() => setPresentationOpen(true)}
+              className="text-xs h-7 px-2 flex items-center gap-1.5"
+            >
+              <Presentation className="h-3.5 w-3.5" />
+               Presentation
+            </Button>
             <Button
               variant="super3d"
               size="sm"
@@ -43,7 +57,7 @@ export default function TitanicSurvivorStory() {
               className="text-xs h-7 px-2 flex items-center gap-1.5"
             >
               <Code className="h-3.5 w-3.5" />
-              Code Preview
+              Code
             </Button>
             <Button
               variant="super3d"
@@ -52,9 +66,9 @@ export default function TitanicSurvivorStory() {
               className="text-xs h-7 px-2 flex items-center gap-1.5"
             >
               <ExternalLink className="h-3.5 w-3.5" />
-              Host View
+              Host
             </Button>
-          </span>
+          </div>
         </Typography>
         <Typography variant="p" className="mb-3">
           An interactive data story exploring the Titanic disaster through passenger data,
@@ -70,6 +84,15 @@ export default function TitanicSurvivorStory() {
             hide-tabs
           ></tableau-viz>
         </div>
+        <SlideShowViewerModal
+          open={presentationOpen}
+          onClose={() => setPresentationOpen(false)}
+          title="Titanic Survivor Story Presentation"
+          imageDirectory="/images/titanic-presentation"
+          pdfUrl={titanicPresentationPdf}
+          slideCount={slideshowImageCount}
+          fileExtension="webp"
+        />
       </Paper>
     </Box>
   );

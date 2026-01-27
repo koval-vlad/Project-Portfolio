@@ -23,7 +23,7 @@ export default function GiftCalcs() {
             className="text-xs h-7 px-2 flex items-center gap-1.5"
           >
             <ExternalLink className="h-3.5 w-3.5" />
-            View GiftCalcs
+            GiftCalcs
           </Button>
         </Typography>
 

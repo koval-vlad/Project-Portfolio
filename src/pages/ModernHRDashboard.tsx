@@ -5,7 +5,7 @@ import { Typography } from '@/components/ui/typography';
 import { useEffect, useState } from 'react';
 import { HiOutlinePresentationChartLine } from 'react-icons/hi';
 import { Code, ExternalLink, Presentation } from 'lucide-react';
-import SVGSpriteViewerModal from '../components/SVGSpriteViewerModal';
+import SlideShowViewerModal from '../components/SlideShowViewerModal';
 import hrDashboardPdf from '/docs/HR-Dashboard.pdf';
 
 export default function ModernHRDashboard() {
@@ -47,7 +47,7 @@ export default function ModernHRDashboard() {
               className="text-xs h-7 px-2 flex items-center gap-1.5"
             >
               <Presentation className="h-3.5 w-3.5" />
-              View Presentation
+              Presentation
             </Button>
             <Button
               variant="super3d"
@@ -56,7 +56,7 @@ export default function ModernHRDashboard() {
               className="text-xs h-7 px-2 flex items-center gap-1.5"
             >
               <Code className="h-3.5 w-3.5" />
-              Code Preview
+              Code
             </Button>         
             <Button
               variant="super3d"
@@ -65,7 +65,7 @@ export default function ModernHRDashboard() {
               className="text-xs h-7 px-2 flex items-center gap-1.5"
             >
               <ExternalLink className="h-3.5 w-3.5" />
-              Host View
+              Host
             </Button>   
           </div>
         </Typography>
@@ -83,13 +83,14 @@ export default function ModernHRDashboard() {
             hide-tabs
           ></tableau-viz>
         </div>
-        <SVGSpriteViewerModal
+        <SlideShowViewerModal
           open={presentationOpen}
           onClose={() => setPresentationOpen(false)}
           pdfUrl={hrDashboardPdf}
           title="HR Dashboard Presentation"
-          slideDirectory="/images/hr-dashboard-presentation"
+          imageDirectory="/images/hr-dashboard-presentation"
           slideCount={slideshowImageCount}
+          fileExtension="webp"
         />
       </Paper>
     </Box>

@@ -72,7 +72,7 @@ export default function Home() {
                                 className="text-xs h-7 px-2 flex items-center gap-1.5"
                             >
                                 <Code className="h-3.5 w-3.5" />
-                                Code Preview
+                                Code
                             </Button>
                         </Box>
                     </Box>                    

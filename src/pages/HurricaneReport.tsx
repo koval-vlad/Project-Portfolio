@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTornado } from '@fortawesome/free-solid-svg-icons';
 import { Presentation } from 'lucide-react';
-import SVGSpriteViewerModal from '../components/SVGSpriteViewerModal';
+import SlideShowViewerModal from '../components/SlideShowViewerModal';
 import ExcelViewer from '../components/ExcelViewer';
 import hurricanePdf from '/docs/Hurricane-Presentation.pdf';
 
@@ -34,7 +34,7 @@ export default function HurricaneReport() {
             className="text-xs h-7 px-2 flex items-center gap-1.5"
           >
             <Presentation className="h-3.5 w-3.5" />
-            View Presentation
+            Presentation
           </Button>
         </Typography>
 
@@ -49,13 +49,14 @@ export default function HurricaneReport() {
           excelContainerHeight={800}
         />
 
-        <SVGSpriteViewerModal
+        <SlideShowViewerModal
           open={presentationOpen}
           onClose={() => setPresentationOpen(false)}
           pdfUrl={hurricanePdf}
           title="Hurricane Presentation"
-          slideDirectory="/images/hurricane-presentation"
+          imageDirectory="/images/hurricane-presentation"
           slideCount={slideshowImageCount}
+          fileExtension="webp"
         />
       </Paper>
     </Box>
