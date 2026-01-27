@@ -428,7 +428,7 @@ export default function SlideShowViewerModal({
 
           {currentImageSrc ? (
             <div
-              key={`slide-${currentSlideIndex}-${scale}`}
+              key={`slide-${currentSlideIndex}`}
               className={`w-full h-full flex justify-center items-center ${
                 isFullscreen ? 'overflow-hidden p-0' : 'overflow-auto p-4'
               }`}
