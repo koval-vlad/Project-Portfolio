@@ -3,17 +3,17 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import usaFlag from '../assets/usa-flag.svg';
+import usaFlag from '../assets/usa-flag.webp';
 
 // Import all certificate images
-import activeServerPagesSmall from '../assets/2000-Active-Server-Pages-small.svg';
-import activeServerPagesLarge from '../assets/2000-Active-Server-Pages-large.svg';
-import javaServerPagesSmall from '../assets/2001-Java-Server-Pages-small.svg';
-import javaServerPagesLarge from '../assets/2001-Java-Server-Pages-large.svg';
-import visualStudioSmall from '../assets/2011-Visual-Studio-small.svg';
-import visualStudioLarge from '../assets/2011-Visual-Studio-large.svg';
-import businessAnalysisSmall from '../assets/2014-Business-Analysis-small.svg';
-import businessAnalysisLarge from '../assets/2014-Business-Analysis-large.svg';
+import activeServerPagesSmall from '../assets/2000-Active-Server-Pages-small.webp';
+import activeServerPagesLarge from '../assets/2000-Active-Server-Pages-large.webp';
+import javaServerPagesSmall from '../assets/2001-Java-Server-Pages-small.webp';
+import javaServerPagesLarge from '../assets/2001-Java-Server-Pages-large.webp';
+import visualStudioSmall from '../assets/2011-Visual-Studio-small.webp';
+import visualStudioLarge from '../assets/2011-Visual-Studio-large.webp';
+import businessAnalysisSmall from '../assets/2014-Business-Analysis-small.webp';
+import businessAnalysisLarge from '../assets/2014-Business-Analysis-large.webp';
 
 interface OtherEducationCardProps {
   certificateImage: string;

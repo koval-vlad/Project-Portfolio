@@ -1,7 +1,7 @@
 import { Box } from '@/components/ui/box';
 import { Typography } from '@/components/ui/typography';
 import { useNavigate } from 'react-router-dom';
-import educationLogo from '../assets/education.svg';
+import educationLogo from '../assets/education.webp';
 
 interface EducationSubmenuProps {
   onClose: () => void;

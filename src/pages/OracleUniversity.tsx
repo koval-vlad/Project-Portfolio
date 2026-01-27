@@ -4,9 +4,9 @@ import { FuturisticCard } from '@/components/ui/futuristic-card';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import usaFlag from '../assets/usa-flag.svg';
-import oracleAnalyticSql from '../assets/2016-Oracle-Analytic-SQL-Data-Warehousing-large.svg';
-import oracleSqlTuning from '../assets/2016-Oracle-SQL-Tuning-for-Developers-large.svg';
+import usaFlag from '../assets/usa-flag.webp';
+import oracleAnalyticSql from '../assets/2016-Oracle-Analytic-SQL-Data-Warehousing-large.webp';
+import oracleSqlTuning from '../assets/2016-Oracle-SQL-Tuning-for-Developers-large.webp';
 
 interface OracleCardProps {
   certificateImage: string;

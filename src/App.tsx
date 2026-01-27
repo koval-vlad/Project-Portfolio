@@ -1,35 +1,45 @@
 "use client"
 
+import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Box } from '@/components/ui/box';
 import Header from './components/Header';
 import DynamicBackground from './components/DynamicBackground';
 import { ThemeProvider } from './components/ThemeProvider';
 import { useTheme } from 'next-themes';
-import { useEffect } from 'react';
-import Home from './pages/Home';
-import ModernHRDashboard from './pages/ModernHRDashboard';
-import HRAnalyticsDashboard from './pages/HRAnalyticsDashboard';
-import TitanicSurvivorStory from './pages/TitanicSurvivorStory';
-import DynamoSoftware from './pages/DynamoSoftware';
-import CRDTradingSystem from './pages/CRDTradingSystem';
-import PortfolioModeler from './pages/PortfolioModeler';
-import IPOModule from './pages/IPOModule';
-import AssetMix from './pages/AssetMix';
-import OrderManager from './pages/OrderManager';
-import GiftWrapMerge from './pages/GiftWrapMerge';
-import GiftCalcs from './pages/GiftCalcs';
-import CorporateWebSite from './pages/CorporateWebSite';
-import HurricaneReport from './pages/HurricaneReport';
-import GiftWrap from './pages/GiftWrap';
-import DatabaseManager from './pages/DatabaseManager';
-import FormalDegree from './pages/FormalDegree';
-import Certificates from './pages/Certificates';
-import Pluralsight from './pages/Pluralsight';
-import OracleUniversity from './pages/OracleUniversity';
-import OtherEducation from './pages/OtherEducation';
-import Resume from './pages/Resume';
-import EmailRedactorAI from './pages/EmailRedactorAI';
+
+// Lazy-loaded page components for route splitting (Vite code splitting)
+const Home = lazy(() => import('./pages/Home'));
+const ModernHRDashboard = lazy(() => import('./pages/ModernHRDashboard'));
+const HRAnalyticsDashboard = lazy(() => import('./pages/HRAnalyticsDashboard'));
+const TitanicSurvivorStory = lazy(() => import('./pages/TitanicSurvivorStory'));
+const DynamoSoftware = lazy(() => import('./pages/DynamoSoftware'));
+const CRDTradingSystem = lazy(() => import('./pages/CRDTradingSystem'));
+const PortfolioModeler = lazy(() => import('./pages/PortfolioModeler'));
+const IPOModule = lazy(() => import('./pages/IPOModule'));
+const AssetMix = lazy(() => import('./pages/AssetMix'));
+const OrderManager = lazy(() => import('./pages/OrderManager'));
+const GiftWrapMerge = lazy(() => import('./pages/GiftWrapMerge'));
+const GiftCalcs = lazy(() => import('./pages/GiftCalcs'));
+const CorporateWebSite = lazy(() => import('./pages/CorporateWebSite'));
+const HurricaneReport = lazy(() => import('./pages/HurricaneReport'));
+const GiftWrap = lazy(() => import('./pages/GiftWrap'));
+const DatabaseManager = lazy(() => import('./pages/DatabaseManager'));
+const FormalDegree = lazy(() => import('./pages/FormalDegree'));
+const Certificates = lazy(() => import('./pages/Certificates'));
+const Pluralsight = lazy(() => import('./pages/Pluralsight'));
+const OracleUniversity = lazy(() => import('./pages/OracleUniversity'));
+const OtherEducation = lazy(() => import('./pages/OtherEducation'));
+const Resume = lazy(() => import('./pages/Resume'));
+const EmailRedactorAI = lazy(() => import('./pages/EmailRedactorAI'));
+
+function PageLoader() {
+  return (
+    <Box className="flex items-center justify-center min-h-[200px] text-muted-foreground">
+      Loading…
+    </Box>
+  );
+}
 
 function AppContent() {
   const { theme } = useTheme();
@@ -67,7 +77,8 @@ function AppContent() {
         <DynamicBackground />
         <Header />
         <Box className="pt-2 px-6 relative z-10">
-          <Routes>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/tableau/modern-hr-dashboard" element={<ModernHRDashboard />} />
                 <Route path="/tableau/hr-analytics-dashboard" element={<HRAnalyticsDashboard />} />
@@ -92,6 +103,7 @@ function AppContent() {
                 <Route path="/education/other" element={<OtherEducation />} />
                 <Route path="/resume" element={<Resume />} />
               </Routes>
+          </Suspense>
             </Box>
           </Box>
         </Router>

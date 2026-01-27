@@ -20,7 +20,7 @@ import {
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
 import DynamicBackground from './DynamicBackground';
-import vladImage from '../assets/vlad.svg';
+import vladImage from '../assets/vlad.webp';
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);

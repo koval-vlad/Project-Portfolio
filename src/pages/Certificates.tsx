@@ -3,9 +3,9 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import usaFlag from '../assets/usa-flag.svg';
-import clsClcImage from '../assets/1998-Computer-Learning-Center-large.svg';
-import clsUssImage from '../assets/2026-Unique-System-Skills-large.svg';
+import usaFlag from '../assets/usa-flag.webp';
+import clsClcImage from '../assets/1998-Computer-Learning-Center-large.webp';
+import clsUssImage from '../assets/2026-Unique-System-Skills-large.webp';
 
 interface CertificateCardProps {
   certificateImage: string;

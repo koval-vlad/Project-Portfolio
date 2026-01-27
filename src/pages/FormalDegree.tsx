@@ -1,7 +1,7 @@
 import { Box } from '@/components/ui/box';
 import { FuturisticCard } from '@/components/ui/futuristic-card';
-import ukrFlag from '../assets/ukr-flag.svg';
-import znuImage from '../assets/ZNU.svg';
+import ukrFlag from '../assets/ukr-flag.webp';
+import znuImage from '../assets/ZNU.webp';
 
 export default function FormalDegree() {
   const coursework = [

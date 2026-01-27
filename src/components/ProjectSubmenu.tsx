@@ -5,31 +5,31 @@ import { Typography } from '@/components/ui/typography';
 import { useNavigate } from 'react-router-dom';
 
 // Tableau images
-import tableauModernHrDash from '../assets/tableau-modern-hr-dash.svg';
-import tableauHrDash from '../assets/tableau-hr-dash.svg';
-import tableauTitanicStory from '../assets/tableau-titanic-story.svg';
+import tableauModernHrDash from '../assets/tableau-modern-hr-dash.webp';
+import tableauHrDash from '../assets/tableau-hr-dash.webp';
+import tableauTitanicStory from '../assets/tableau-titanic-story.webp';
 
 // .NET images
-import netDynamoSoft from '../assets/net-dynamo-soft.svg';
-import netMfsCrims from '../assets/net-mfs-crims.svg';
-import netMfsGpm from '../assets/net-mfs-gpm.svg';
-import netMfsIpo from '../assets/net-mfs-ipo.svg';
-import netMfsAssetMix from '../assets/net-mfs-asset-mix.svg';
-import netMfsMom from '../assets/net-mfs-mom.svg';
-import netPgcalcGiftWrapMerge from '../assets/net-pgcalc-gift-wrap-merge.svg';
-import netPgcalcGiftCalcs from '../assets/net-pgcalc-gift-calcs.svg';
-import vbWebSite from '../assets/vb-web-site.svg';
-import netKccHurricane from '../assets/net-kcc-hurricane.svg';
+import netDynamoSoft from '../assets/net-dynamo-soft.webp';
+import netMfsCrims from '../assets/net-mfs-crims.webp';
+import netMfsGpm from '../assets/net-mfs-gpm.webp';
+import netMfsIpo from '../assets/net-mfs-ipo.webp';
+import netMfsAssetMix from '../assets/net-mfs-asset-mix.webp';
+import netMfsMom from '../assets/net-mfs-mom.webp';
+import netPgcalcGiftWrapMerge from '../assets/net-pgcalc-gift-wrap-merge.webp';
+import netPgcalcGiftCalcs from '../assets/net-pgcalc-gift-calcs.webp';
+import vbWebSite from '../assets/vb-web-site.webp';
+import netKccHurricane from '../assets/net-kcc-hurricane.webp';
 
 // VB images
-import vbPgcalcGiftWrap from '../assets/vb-pgcalc-gift-wrap.svg';
-import vbPgcalcDbManager from '../assets/vb-pgcalc-db-manager.svg';
+import vbPgcalcGiftWrap from '../assets/vb-pgcalc-gift-wrap.webp';
+import vbPgcalcDbManager from '../assets/vb-pgcalc-db-manager.webp';
 
 // Python images
-import pythonEmailRedactorAi from '../assets/python-email-redactor-ai.svg';
+import pythonEmailRedactorAi from '../assets/python-email-redactor-ai.webp';
 
 // React images
-import reactProjectPortfolio from '../assets/react-project-portfolio.svg';
+import reactProjectPortfolio from '../assets/react-project-portfolio.webp';
 
 interface ProjectSubmenuProps {
   category: string;
