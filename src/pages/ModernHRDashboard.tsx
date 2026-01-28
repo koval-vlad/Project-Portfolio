@@ -87,7 +87,7 @@ export default function ModernHRDashboard() {
           open={presentationOpen}
           onClose={() => setPresentationOpen(false)}
           pdfUrl={hrDashboardPdf}
-          title="HR Dashboard Presentation"
+          title="HR Modern Dashboard Presentation"
           imageDirectory="/images/hr-dashboard-presentation"
           slideCount={slideshowImageCount}
           fileExtension="webp"

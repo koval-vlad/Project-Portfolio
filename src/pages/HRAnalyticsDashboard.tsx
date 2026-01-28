@@ -2,11 +2,16 @@ import { Box } from '@/components/ui/box';
 import { Paper } from '@/components/ui/paper';
 import { Typography } from '@/components/ui/typography';
 import { Button } from '@/components/ui/button';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import BarChartIcon from '@mui/icons-material/AreaChartOutlined';
-import { Code, ExternalLink } from 'lucide-react';
+import { Code, ExternalLink, Presentation } from 'lucide-react';
+import SlideShowViewerModal from '../components/SlideShowViewerModal';
+import hrAnalyticsPdf from '/docs/HR-Analytics-Presentation.pdf';
 
 export default function HRAnalyticsDashboard() {
+  const [presentationOpen, setPresentationOpen] = useState(false);
+  const slideshowImageCount = 16;
+
   const handleCodePreview = () => {
     window.open('https://github.com/koval-vlad/Tableau-Projects/tree/master/HR%20Analytics%20Dashboard', '_blank', 'noopener,noreferrer');
   };
@@ -34,7 +39,16 @@ export default function HRAnalyticsDashboard() {
             HR Analytics Dashboard<sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>Personal</sup>
             <BarChartIcon style={{ fontSize: '1.5rem' }} />
           </span>
-          <span className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
+            <Button
+              variant="super3d"
+              size="sm"
+              onClick={() => setPresentationOpen(true)}
+              className="text-xs h-7 px-2 flex items-center gap-1.5"
+            >
+              <Presentation className="h-3.5 w-3.5" />
+              Presentation
+            </Button>
             <Button
               variant="super3d"
               size="sm"
@@ -53,7 +67,7 @@ export default function HRAnalyticsDashboard() {
               <ExternalLink className="h-3.5 w-3.5" />
               Host
             </Button>
-          </span>
+          </div>
         </Typography>
         <Typography variant="p" className="mb-3">
           Advanced analytics dashboard for human resources data analysis, featuring interactive visualizations
@@ -69,6 +83,15 @@ export default function HRAnalyticsDashboard() {
             hide-tabs
           ></tableau-viz>
         </div>
+        <SlideShowViewerModal
+          open={presentationOpen}
+          onClose={() => setPresentationOpen(false)}
+          pdfUrl={hrAnalyticsPdf}
+          title="HR Analytics Dashboard Presentation"
+          imageDirectory="/images/hr-analytics-presentation"
+          slideCount={slideshowImageCount}
+          fileExtension="webp"
+        />
       </Paper>
     </Box>
   );
