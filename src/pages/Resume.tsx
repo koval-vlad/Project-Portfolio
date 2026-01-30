@@ -13,6 +13,7 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { useState } from 'react';
 import Tooltip from '@/components/ui/tooltip';
 import { Download } from 'lucide-react';
+import { config } from '@/config';
 
 interface ExperienceEntry {
   title: string;
@@ -52,7 +53,7 @@ const experiences: ExperienceEntry[] = [
     company: 'Dynamo Software',
     location: 'Watertown, MA',
     period: '2024 – 2025',
-    website: 'https://www.dynamosoftware.com',
+    website: config.resume.companies.dynamo,
     description: [
       'Communicated with project managers, product owners and development team to facilitate understanding of deliverables, estimates, and prioritization for ASP.NET Core FinTech Research and Portfolio Management SaaS platform solving challenges across the alternative investment landscape.',
       'Delivered Composite benchmarks feature to automatically populate synthetic benchmark values based on the weighted combination of constituent index values (C#, SQL Server).',
@@ -68,7 +69,7 @@ const experiences: ExperienceEntry[] = [
     company: 'MFS Investment Management',
     location: 'Boston, MA',
     period: '2007 – 2023',
-    website: 'https://www.mfs.com',
+    website: config.resume.companies.mfs,
     description: [
       'Collaborated with other developers, business analysts, and stakeholders to gather requirements and ensure successful migration of Portfolio Modelling Tool into .Net Core trading application responsible for sending 80% of company stock orders to Charles River Investment Management System running in Azure.',
       'Took the lead in designing, architecting, and developing authorization, health check, emailing, client logging, performance recording and data retrieval of Grpc/Web API microservices for the new Modelling Tool.',
@@ -97,7 +98,7 @@ const experiences: ExperienceEntry[] = [
     company: 'PG Calc Incorporated',
     location: 'Cambridge, MA',
     period: '2000 – 2007',
-    website: 'https://www.pgcalc.com',
+    website: config.resume.companies.pgcalc,
     description: [
       'Ported ASP commercial charitable deduction calculator (GiftCalcs) to ASP.NET object-oriented application. Completely redesigned UI and replaced the database provider (ASP.NET, C#, JavaScript, HTML, SQL Server).',
       'Integrated gift presentation slideshow (GiftStory) into GiftCalcs (ASP.NET, Flash). Extended GiftCalcs admin features by adding templated email broadcaster (C#, Windows service).',
@@ -200,7 +201,7 @@ export default function Resume() {
             <Box className="flex items-center justify-center gap-4 mt-1">
               <Tooltip text="My Projects Website" placement="top">
                 <a
-                  href="https://koval-vlad-portfolio.vercel.app"
+                  href={config.resume.portfolio}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Website"
@@ -212,7 +213,7 @@ export default function Resume() {
 
               <Tooltip text="My LinkedIn Profile" placement="bottom">
                 <a
-                  href="https://www.linkedin.com/in/vlad-koval-614976a4/"
+                  href={config.resume.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"

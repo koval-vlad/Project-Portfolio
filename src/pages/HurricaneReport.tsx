@@ -9,11 +9,12 @@ import { Presentation } from 'lucide-react';
 import SlideShowViewerModal from '../components/SlideShowViewerModal';
 import ExcelViewer from '../components/ExcelViewer';
 import hurricanePdf from '/docs/Hurricane-Presentation.pdf';
+import { config } from '@/config';
 
 export default function HurricaneReport() {
   const [presentationOpen, setPresentationOpen] = useState(false);
 
-  const excelSrc = `https://view.officeapps.live.com/op/embed.aspx?src=${window.location.origin}/docs/Hurricanes-Report.xlsx?version=${new Date().getTime()}`;
+  const excelSrc = `${config.officeEmbedBase}?src=${window.location.origin}/docs/Hurricanes-Report.xlsx?version=${new Date().getTime()}`;
   const slideshowImageCount = 28;
 
   // Slides are served from public/images/hurricane-presentation/ and loaded by SlideShowViewerModal.

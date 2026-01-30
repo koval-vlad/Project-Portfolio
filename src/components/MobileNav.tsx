@@ -30,11 +30,6 @@ export default function MobileNav({ currentPath, onClose }: MobileNavProps) {
     }
   }, [currentPath]);
 
-  const handleToggle = (menuName: string) => {
-    setOpenMenus({ ...openMenus, [menuName]: !openMenus[menuName] });
-    setActiveMenuItem(menuName);
-  };
-
   const handleNavigate = (path: string) => {
     navigate(path);
     onClose();
@@ -73,7 +68,13 @@ export default function MobileNav({ currentPath, onClose }: MobileNavProps) {
       <List className="w-full overflow-hidden">
         {menuItems.map((item) => (
           <Box key={item.label}>
-            <Collapsible open={openMenus[item.label]} onOpenChange={() => handleToggle(item.label)}>
+            <Collapsible
+              open={openMenus[item.label] === true}
+              onOpenChange={(open) => {
+                setOpenMenus(prev => ({ ...prev, [item.label]: open }));
+                if (open) setActiveMenuItem(item.label);
+              }}
+            >
               <ListItem>
                 {item.expandable ? (
                   <CollapsibleTrigger asChild>

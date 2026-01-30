@@ -7,21 +7,22 @@ import { HiOutlinePresentationChartLine } from 'react-icons/hi';
 import { Code, ExternalLink, Presentation } from 'lucide-react';
 import SlideShowViewerModal from '../components/SlideShowViewerModal';
 import hrDashboardPdf from '/docs/HR-Dashboard.pdf';
+import { config } from '@/config';
 
 export default function ModernHRDashboard() {
   const [presentationOpen, setPresentationOpen] = useState(false);
   const slideshowImageCount = 16;
 
   const handleCodePreview = () => {
-    window.open('https://github.com/koval-vlad/Tableau-Projects/tree/master/Modern%20HR%20Dashboard', '_blank', 'noopener,noreferrer');
+    window.open(config.tableau.modernHR.code, '_blank', 'noopener,noreferrer');
   };
   const handleHostView = () => {
-    window.open('https://public.tableau.com/app/profile/vlad.koval/viz/ModernHRDashboard_17655530147630/HRDashboard', '_blank', 'noopener,noreferrer');
+    window.open(config.tableau.modernHR.host, '_blank', 'noopener,noreferrer');
   };
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js';
+    script.src = config.tableau.apiScript;
     script.type = 'module';
     script.async = true;
     document.body.appendChild(script);
@@ -76,7 +77,7 @@ export default function ModernHRDashboard() {
         <div className="myTableauViz" style={{ width: '100%', maxWidth: '1400px', marginLeft: 'auto', marginRight: 'auto' }}>
           <tableau-viz
             id="tableauViz"
-            src="https://public.tableau.com/views/ModernHRDashboard_17655530147630/HRDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+            src={config.tableau.modernHR.embed}
             width="100%"
             height="800px"
             toolbar="bottom"

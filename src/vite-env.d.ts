@@ -1,5 +1,9 @@
 /// <reference types="vite/client" />
 
+interface ImportMetaEnv {
+  readonly VITE_USE_DEV_CONFIG?: string;
+}
+
 declare global {
   namespace JSX {
     interface IntrinsicElements {

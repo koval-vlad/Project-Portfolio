@@ -8,21 +8,22 @@ import { faShip } from '@fortawesome/free-solid-svg-icons';
 import { Code, ExternalLink, Presentation } from 'lucide-react';
 import SlideShowViewerModal from '../components/SlideShowViewerModal';
 import titanicPresentationPdf from '/docs/Titanic-Presentation.pdf';
+import { config } from '@/config';
 
 export default function TitanicSurvivorStory() {
   const [presentationOpen, setPresentationOpen] = useState(false);
   const slideshowImageCount = 19;
 
   const handleCodePreview = () => {
-    window.open('https://github.com/koval-vlad/Tableau-Projects/tree/master/Who%20Survived%20Titanic%20Tragedy%20Story', '_blank', 'noopener,noreferrer');
+    window.open(config.tableau.titanic.code, '_blank', 'noopener,noreferrer');
   };
   const handleHostView = () => {
-    window.open('https://public.tableau.com/app/profile/vlad.koval/viz/WhoSurvivedTitanicTragedyStory/WhoSurvivedTitanicTragedyStory', '_blank', 'noopener,noreferrer');
+    window.open(config.tableau.titanic.host, '_blank', 'noopener,noreferrer');
   };
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js';
+    script.src = config.tableau.apiScript;
     script.type = 'module';
     script.async = true;
     document.body.appendChild(script);
@@ -77,7 +78,7 @@ export default function TitanicSurvivorStory() {
         <div className="myTableauViz" style={{ width: '100%', maxWidth: '1400px', marginLeft: 'auto', marginRight: 'auto' }}>
           <tableau-viz
             id="tableauViz"
-            src="https://public.tableau.com/shared/D5J3ZZ2CH?:display_count=n&:origin=viz_share_link"
+            src={config.tableau.titanic.embed}
             width="100%"
             height="1000px"
             toolbar="bottom"

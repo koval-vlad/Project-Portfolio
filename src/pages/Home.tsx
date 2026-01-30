@@ -11,6 +11,7 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Code } from 'lucide-react';
+import { config } from '@/config';
 
 export default function Home() {
     const [weather, setWeather] = useState<'sunny' | 'rain' | 'snow'>('sunny');
@@ -21,7 +22,7 @@ export default function Home() {
         3: true, // AI Assisted Tools
     });
     const handleCodePreview = () => {
-        window.open('https://github.com/koval-vlad/Project-Portfolio', '_blank', 'noopener,noreferrer');
+        window.open(config.github.projectPortfolio, '_blank', 'noopener,noreferrer');
     };
 
     useEffect(() => {

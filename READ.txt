@@ -1,3 +1,18 @@
 Before using in VS Code or Cursor run this command to install node_modules: 
 
 npm install
+
+Default behavior is production config:
+ npm run dev
+Dev config is used only when you run:
+ npm run dev:local or set VITE_USE_DEV_CONFIG=true in an env file.
+Using dev config when testing
+Option A – npm script
+Run:
+  npm run dev:local
+This uses cross-env VITE_USE_DEV_CONFIG=true vite, so the app loads dev config (e.g. Email Redactor iframe and postMessage target point to http://localhost:3000/).
+Option B – env file
+Create .env.development.local (or .env.local) with:
+  VITE_USE_DEV_CONFIG=true
+Then run npm run dev as usual. Dev config will be used.
+.env.example documents this and is committed; .env*.local is ignored via *.local in .gitignore.
