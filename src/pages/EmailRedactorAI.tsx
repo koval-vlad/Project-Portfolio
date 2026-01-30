@@ -4,13 +4,15 @@ import { Paper } from '@/components/ui/paper';
 import { Button } from '@/components/ui/button';
 import { EmailOutlined } from '@mui/icons-material';
 import { Code, ExternalLink } from 'lucide-react';
+import { config } from '@/config';
 
 export default function EmailRedactorAI() {
+    
   const handleCodePreview = () => {
-    window.open('https://github.com/koval-vlad/EmailPrivacyRedactorAI', '_blank', 'noopener,noreferrer');
+    window.open(config.github.emailPrivacyRedactorAI, '_blank', 'noopener,noreferrer');
   };
   const handleHostView = () => {
-    window.open('https://email-privacy-redactor-ai-blue-wood.reflex.run/', '_blank', 'noopener,noreferrer');
+    window.open(config.emailRedactor.appUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -49,8 +51,8 @@ export default function EmailRedactorAI() {
           version with AI feedback.
         </Typography>
         <Box className="mt-6">
-          <iframe
-            src="https://email-privacy-redactor-ai-blue-wood.reflex.run/"
+          <iframe            
+            src={config.emailRedactor.appUrl}
             width="100%"
             height="950px"
             style={{ border: 'none', borderRadius: '8px' }}
