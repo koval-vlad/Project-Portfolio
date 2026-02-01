@@ -3,11 +3,16 @@ import { Typography } from '@/components/ui/typography';
 import { Paper } from '@/components/ui/paper';
 import { Button } from '@/components/ui/button';
 import { EmailOutlined } from '@mui/icons-material';
-import { Code, ExternalLink } from 'lucide-react';
+import { Code, ExternalLink, Presentation } from 'lucide-react';
+import { useState } from 'react';
+import SlideShowViewerModal from '../components/SlideShowViewerModal';
+import emailRedactorPdf from '/docs/Email-Redactor-Presentation.pdf';
 import { config } from '@/config';
 
 export default function EmailRedactorAI() {
-    
+  const [presentationOpen, setPresentationOpen] = useState(false);
+  const slideshowImageCount = 21;
+
   const handleCodePreview = () => {
     window.open(config.github.emailPrivacyRedactorAI, '_blank', 'noopener,noreferrer');
   };
@@ -23,7 +28,16 @@ export default function EmailRedactorAI() {
             Email Redactor AI<sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>Personal</sup>
             <EmailOutlined sx={{ fontSize: '1.5rem' }} />
           </span>
-          <span className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
+            <Button
+              variant="super3d"
+              size="sm"
+              onClick={() => setPresentationOpen(true)}
+              className="text-xs h-7 px-2 flex items-center gap-1.5"
+            >
+              <Presentation className="h-3.5 w-3.5" />
+              Presentation
+            </Button>
             <Button
               variant="super3d"
               size="sm"
@@ -42,7 +56,7 @@ export default function EmailRedactorAI() {
               <ExternalLink className="h-3.5 w-3.5" />
               Host
             </Button>
-          </span>
+          </div>
         </Typography>
         <Typography variant="p" className="mb-3">
           AI-powered email privacy tool that automatically redacts sensitive information 
@@ -60,6 +74,15 @@ export default function EmailRedactorAI() {
             allow="clipboard-read; clipboard-write"
           />
         </Box>
+        <SlideShowViewerModal
+          open={presentationOpen}
+          onClose={() => setPresentationOpen(false)}
+          pdfUrl={emailRedactorPdf}
+          title="Email Redactor AI Presentation"
+          imageDirectory="/images/email-redactor-presentation"
+          slideCount={slideshowImageCount}
+          fileExtension="webp"
+        />
       </Paper>
     </Box>
   );
