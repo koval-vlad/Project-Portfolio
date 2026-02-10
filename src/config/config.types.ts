@@ -3,10 +3,15 @@ export interface AppConfig {
   emailRedactor: {
     appUrl: string;
   };
+  /** Pet Analysis Dashboard Hugging Face Spaces app. */
+  petAnalysis: {
+    appUrl: string;
+  };
   /** GitHub repo URLs. */
   github: {
     projectPortfolio: string;
     emailPrivacyRedactorAI: string;
+    petOwnershipAnalysis: string;
     hrAnalyticsDashboard: string;
     modernHRDashboard: string;
     titanicSurvivorStory: string;

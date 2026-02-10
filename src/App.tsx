@@ -32,6 +32,7 @@ const OracleUniversity = lazy(() => import('./pages/OracleUniversity'));
 const OtherEducation = lazy(() => import('./pages/OtherEducation'));
 const Resume = lazy(() => import('./pages/Resume'));
 const EmailRedactorAI = lazy(() => import('./pages/EmailRedactorAI'));
+const PetAnalysisDashboard = lazy(() => import('./pages/PetAnalysisDashboard'));
 
 function PageLoader() {
   return (
@@ -96,6 +97,7 @@ function AppContent() {
                 <Route path="/vb/gift-wrap" element={<GiftWrap />} />
                 <Route path="/vb/database-manager" element={<DatabaseManager />} />
                 <Route path="/python/email-redactor-ai" element={<EmailRedactorAI />} />
+                <Route path="/python/pet-analysis-dashboard" element={<PetAnalysisDashboard />} />
                 <Route path="/education/formal-degree" element={<FormalDegree />} />
                 <Route path="/education/certificates" element={<Certificates />} />
                 <Route path="/education/pluralsight" element={<Pluralsight />} />

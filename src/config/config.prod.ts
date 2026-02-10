@@ -4,9 +4,13 @@ export const config: AppConfig = {
   emailRedactor: {
     appUrl: 'https://email-privacy-redactor-ai-blue-wood.reflex.run/',
   },
+  petAnalysis: {
+    appUrl: 'https://vlad-koval-pet-ownership-analysis.hf.space/pet_ownership_analysis',
+  },
   github: {
     projectPortfolio: 'https://github.com/koval-vlad/Project-Portfolio',
     emailPrivacyRedactorAI: 'https://github.com/koval-vlad/EmailPrivacyRedactorAI',
+    petOwnershipAnalysis: 'https://github.com/koval-vlad/Pet-Ownership-Analysis',
     hrAnalyticsDashboard: 'https://github.com/koval-vlad/Tableau-Projects/tree/master/HR%20Analytics%20Dashboard',
     modernHRDashboard: 'https://github.com/koval-vlad/Tableau-Projects/tree/master/Modern%20HR%20Dashboard',
     titanicSurvivorStory: 'https://github.com/koval-vlad/Tableau-Projects/tree/master/Who%20Survived%20Titanic%20Tragedy%20Story',

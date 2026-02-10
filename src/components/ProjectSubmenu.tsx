@@ -27,6 +27,7 @@ import vbPgcalcDbManager from '../assets/vb-pgcalc-db-manager.webp';
 
 // Python images
 import pythonEmailRedactorAi from '../assets/python-email-redactor-ai.webp';
+import petOwnershipDashboard from '../assets/pet_ownership_dashboard.webp';
 
 // React images
 import reactProjectPortfolio from '../assets/react-project-portfolio.webp';
@@ -67,6 +68,7 @@ const projectData: Record<string, Project[]> = {
   ],
   python: [
     { id: 1, title: 'Email Redactor AI', image: pythonEmailRedactorAi, route: 'email-redactor-ai' },
+    { id: 2, title: 'Pet Analysis Dashboard', image: petOwnershipDashboard, route: 'pet-analysis-dashboard' },
   ],
   react: [
     { id: 1, title: 'Project Portfolio', image: reactProjectPortfolio, route: '' },
