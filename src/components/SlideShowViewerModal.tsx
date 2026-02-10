@@ -175,8 +175,8 @@ export default function SlideShowViewerModal({
 
   const togglePlayPause = () => setIsPlaying((prev) => !prev);
 
-  const zoomIn = () => setScale((prev) => Math.min(prev + 0.25, 3.0));
-  const zoomOut = () => setScale((prev) => Math.max(prev - 0.25, 0.5));
+  const zoomIn = () => setScale((prev) => Math.min(prev + 0.1, 3.0));
+  const zoomOut = () => setScale((prev) => Math.max(prev - 0.1, 0.1));
 
   const handlePan = useCallback((deltaX: number, deltaY: number) => {
     setTranslateX((prev) => prev + deltaX);
@@ -264,7 +264,7 @@ export default function SlideShowViewerModal({
           <div className="flex items-center gap-0.5">
             <Button
               onClick={zoomOut}
-              disabled={scale <= 0.5}
+              disabled={scale <= 0.1}
               size="sm"
               variant="ghost"
               className="h-7 w-7 p-0"

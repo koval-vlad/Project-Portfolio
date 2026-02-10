@@ -127,7 +127,7 @@ export default function SlideShow({
         const dist = getTouchDistance(e.nativeEvent.touches);
         if (pinchStartDistance.current > 0) {
           const ratio = dist / pinchStartDistance.current;
-          const newScale = Math.min(3, Math.max(0.5, pinchStartScale.current * ratio));
+          const newScale = Math.min(3, Math.max(0.1, pinchStartScale.current * ratio));
           onPinchZoom(newScale);
         }
         return;
