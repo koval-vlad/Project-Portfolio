@@ -59,7 +59,7 @@ export default function PetAnalysisDashboard() {
           </div>
         </Typography>
         <Typography variant="p" className="mb-3">
-          Interactive pet ownership analysis dashboard built with Python, Streamlit, and Hugging Face Spaces.
+          Interactive pet ownership analysis dashboard built with Python, Jupyter Notebook, and Hugging Face Spaces.
           Explore pet ownership patterns, demographics, and trends through visualizations and data insights.
         </Typography>
         <Box className="mt-6">
