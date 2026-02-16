@@ -78,7 +78,7 @@ export const technicalSkills: { category: string; items: { name: string; img?: s
     category: 'Development Tools',
     items: [
       { name: 'PyCharm', img: getAssetUrl('pycharm-light.svg') },   
-      { name: 'Jupyter Notebook', img: getAssetUrl('jupyter-light.webp') },
+      { name: 'Jupyter Notebook', img: getAssetUrl('jupyter-light.svg') },
       { name: 'MS Visual Studio', img: getAssetUrl('visualstudio-light.svg') },   
       { name: 'VS Code', img: getAssetUrl('vscode-light.svg') },   
       { name: 'SQL Server Management Studio', img: getAssetUrl('ssms-light.webp') },   
