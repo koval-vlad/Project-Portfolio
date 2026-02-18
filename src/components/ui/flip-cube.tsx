@@ -127,7 +127,7 @@ export const FlipCube: FC<FlipCubeProps> = ({
           transformStyle: "preserve-3d",
           transition: "transform 0.85s cubic-bezier(0.45, 0.05, 0.25, 1)",
           transform: `rotateY(${displayRotation}deg)`,
-          background: "var(--card)",
+          background: "var(--background)",
         }}
       >
         {/* Border + glow: in front of front face */}
@@ -231,17 +231,11 @@ export const FlipCube: FC<FlipCubeProps> = ({
           )}
         </div>
 
-        {/* ── RIGHT ── */}
-        <div className="bg-card/10 backdrop-blur-xl" style={face(`rotateY(90deg) translateZ(${half}px)`)} />
-
-        {/* ── LEFT ── */}
-        <div className="bg-card/10 backdrop-blur-xl" style={face(`rotateY(-90deg) translateZ(${half}px)`)} />
-
-        {/* ── TOP ── */}
-        <div className="bg-card/10 backdrop-blur-xl" style={face(`rotateX(90deg) translateZ(${half}px)`)} />
-
-        {/* ── BOTTOM ── */}
-        <div className="bg-card/10 backdrop-blur-xl" style={face(`rotateX(-90deg) translateZ(${half}px)`)} />
+        {/* ── RIGHT, LEFT, TOP, BOTTOM: solid theme background (no see-through during spin) ── */}
+        <div style={face(`rotateY(90deg) translateZ(${half}px)`, { background: "var(--background)" })} />
+        <div style={face(`rotateY(-90deg) translateZ(${half}px)`, { background: "var(--background)" })} />
+        <div style={face(`rotateX(90deg) translateZ(${half}px)`, { background: "var(--background)" })} />
+        <div style={face(`rotateX(-90deg) translateZ(${half}px)`, { background: "var(--background)" })} />
       </div>
     </div>
   );
