@@ -6,6 +6,7 @@ import { EmailOutlined } from '@mui/icons-material';
 import { Code, ExternalLink, Presentation } from 'lucide-react';
 import { useState } from 'react';
 import SlideShowViewerModal from '../components/SlideShowViewerModal';
+import IframeWithLoader from '../components/IframeWithLoader';
 import emailRedactorPdf from '/docs/Email-Redactor-Presentation.pdf';
 import { config } from '@/config';
 
@@ -65,11 +66,8 @@ export default function EmailRedactorAI() {
           version with AI feedback.
         </Typography>
         <Box className="mt-6">
-          <iframe            
+          <IframeWithLoader
             src={config.emailRedactor.appUrl}
-            width="100%"
-            height="950px"
-            style={{ border: 'none', borderRadius: '8px' }}
             title="Email Redactor AI"
             allow="clipboard-read; clipboard-write"
           />

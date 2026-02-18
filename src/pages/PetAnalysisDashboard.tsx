@@ -6,6 +6,7 @@ import { BarChart3 } from 'lucide-react';
 import { Code, ExternalLink, Presentation } from 'lucide-react';
 import { useState } from 'react';
 import SlideShowViewerModal from '../components/SlideShowViewerModal';
+import IframeWithLoader from '../components/IframeWithLoader';
 import petDashboardPdf from '/docs/Pet-Dashboard-Presentation.pdf';
 import { config } from '@/config';
 
@@ -63,11 +64,8 @@ export default function PetAnalysisDashboard() {
           Explore pet ownership patterns, demographics, and trends through visualizations and data insights.
         </Typography>
         <Box className="mt-6">
-          <iframe
+          <IframeWithLoader
             src={config.petAnalysis.appUrl}
-            width="100%"
-            height="950px"
-            style={{ border: 'none', borderRadius: '8px' }}
             title="Pet Analysis Dashboard"
             allow="clipboard-read; clipboard-write"
           />
