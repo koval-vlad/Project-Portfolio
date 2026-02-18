@@ -6,8 +6,8 @@ import { X } from 'lucide-react';
 import ukrFlag from '../assets/ukr-flag.webp';
 import znuImage from '../assets/ZNU.webp';
 
-const MIN_CUBE_SIZE = 400;
-const MEASURE_WIDTH = 520;
+const MIN_CUBE_SIZE = 320;
+const MEASURE_WIDTH = 440;
 
 export default function FormalDegree() {
   const measureRef = useRef<HTMLDivElement>(null);
