@@ -82,11 +82,17 @@ export const FlipCube: FC<FlipCubeProps> = ({
     setTimeout(() => setRotating(false), 800);
   };
 
-  const handleMouseEnter = (): void => flip();
+  const touchStartX = useRef<number>(0);
   const handleTouchStart = (e: TouchEvent<HTMLDivElement>): void => {
-    e.preventDefault();
-    flip();
+    touchStartX.current = e.touches[0]?.clientX ?? 0;
   };
+  const handleTouchEnd = (e: TouchEvent<HTMLDivElement>): void => {
+    const touch = e.changedTouches[0];
+    if (!touch) return;
+    const deltaX = touch.clientX - touchStartX.current;
+    if (Math.abs(deltaX) > 50) flip();
+  };
+  const handleMouseEnter = (): void => flip();
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
     if (e.key === "Enter" || e.key === " ") flip();
   };
@@ -131,6 +137,7 @@ export const FlipCube: FC<FlipCubeProps> = ({
       }}
       onMouseEnter={handleMouseEnter}
       onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
       role="button"
       tabIndex={0}
       aria-label={showingText ? `${title} — hover to flip back` : `${imageAlt} — hover to see info`}
