@@ -119,6 +119,18 @@
   border-left: 0.5rem solid var(--primary);
 }
 
+/* FlipCube: scale fonts with cube size (--cube-size) and optional --cube-font-scale */
+.flip-cube-face {
+  font-size: calc(var(--cube-size, 400px) * 0.024 * var(--cube-font-scale, 1));
+}
+.flip-cube-face .triangle-list li {
+  font-size: 1em !important;
+}
+.flip-cube-face .bg-accent p,
+.flip-cube-face p.font-bold {
+  font-size: calc(var(--cube-size, 400px) * 0.032 * var(--cube-font-scale, 1)) !important;
+}
+
 }
 
 /*Themes from tweakcn.com (Tailwind 4, oklch) for shadcn/ui*/

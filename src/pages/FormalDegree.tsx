@@ -61,7 +61,7 @@ export default function FormalDegree() {
       <div className="flex-shrink-0">
         {degreeHeader}
       </div>
-      <div className="flex-1 p-2 [&_li:nth-of-type(even)]:text-primary bg-card">
+      <div className="flex-1 p-2 [&_li:nth-of-type(even)]:text-primary bg-card min-h-0">
         <ul className="triangle-list mt-2">
           {coursework.map((item, index) => (
             <li key={index} className="text-foreground text-xs leading-relaxed text-left">

@@ -40,18 +40,21 @@ interface FlipCubeProps {
   className?: string;
   /** Show border + glow like FuturisticCard */
   showBorderGlow?: boolean;
+  /** Font scale for content (0.9 = slightly smaller to fit more text) */
+  fontScale?: number;
 }
 
 export const FlipCube: FC<FlipCubeProps> = ({
-  image = "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=400&fit=crop",
-  imageAlt = "Location",
-  title = "Downtown",
-  description = "123 Main Street\nNew York, NY 10001\n\nMon–Fri: 11am – 10pm\nSat–Sun: 10am – 11pm",
+  image = "",
+  imageAlt = "",
+  title = "",
+  description = "",
   size = 280,
   frontContent,
   backContent,
   className,
   showBorderGlow = false,
+  fontScale = 1,
 }) => {
   // We keep an ever-increasing rotation angle so CSS transition always goes
   // in the same direction (no snapping back). Each hover adds +180 deg.
@@ -152,8 +155,8 @@ export const FlipCube: FC<FlipCubeProps> = ({
             style={{
               left: -2,
               top: -2,
-              width: size + 4,
-              height: size + 4,
+              width: effectiveSize + 4,
+              height: effectiveSize + 4,
               transform: `translateZ(${half + 1}px)`,
               border: "2px solid var(--primary)",
               boxShadow: "0 0 20px 4px rgba(108,99,255,0.45), 0 12px 28px -8px rgba(0,0,0,0.35)",
@@ -179,10 +182,12 @@ export const FlipCube: FC<FlipCubeProps> = ({
         )}
         {/* ── FRONT: Image or Custom Content ── */}
         <div
-          className="bg-card/10 backdrop-blur-xl"
+          className="bg-card/10 backdrop-blur-xl flip-cube-face"
           style={face(`translateZ(${half}px)`, {
             display: "flex",
             flexDirection: "column",
+            ["--cube-size" as string]: `${effectiveSize}px`,
+            ["--cube-font-scale" as string]: `${fontScale}`,
           })}
         >
           {frontContent ? (
@@ -199,7 +204,7 @@ export const FlipCube: FC<FlipCubeProps> = ({
 
         {/* ── BACK: Text or Custom Content ── */}
         <div
-          className="bg-card"
+          className="bg-card flip-cube-face"
           style={face(`rotateY(180deg) translateZ(${half}px)`, {
             display: "flex",
             flexDirection: "column",
@@ -207,6 +212,8 @@ export const FlipCube: FC<FlipCubeProps> = ({
             justifyContent: "flex-start",
             padding: 0,
             overflow: "hidden",
+            ["--cube-size" as string]: `${effectiveSize}px`,
+            ["--cube-font-scale" as string]: `${fontScale}`,
           })}
         >
           {backContent ? (

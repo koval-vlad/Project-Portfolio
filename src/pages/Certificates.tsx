@@ -74,6 +74,7 @@ const CertificateCube = ({ certificateImage, topText, bottomText, onImageClick, 
   return (
     <FlipCube
       showBorderGlow
+      fontScale={0.9}
       frontContent={frontContent}
       backContent={backContent}
       size={size}
