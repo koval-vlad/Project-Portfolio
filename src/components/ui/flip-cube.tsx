@@ -1,6 +1,9 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import type { FC, KeyboardEvent, TouchEvent, CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/utils";
+
+const MOBILE_PADDING = 48;
+const MIN_CUBE_SIZE = 260;
 
 // ─────────────────────────────────────────────────────────────────────────────
 // FlipCube
@@ -55,6 +58,18 @@ export const FlipCube: FC<FlipCubeProps> = ({
   const totalRotation = useRef<number>(0);
   const [displayRotation, setDisplayRotation] = useState<number>(0);
   const [rotating, setRotating] = useState<boolean>(false);
+  const [effectiveSize, setEffectiveSize] = useState(size);
+
+  useLayoutEffect(() => {
+    const updateSize = () => {
+      const maxViewport = Math.min(window.innerWidth - MOBILE_PADDING, window.innerHeight - 200);
+      const capped = Math.max(MIN_CUBE_SIZE, Math.min(size, maxViewport));
+      setEffectiveSize(capped);
+    };
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, [size]);
 
   const flip = (): void => {
     if (rotating) return;
@@ -73,12 +88,12 @@ export const FlipCube: FC<FlipCubeProps> = ({
     if (e.key === "Enter" || e.key === " ") flip();
   };
 
-  const half = size / 2;
+  const half = effectiveSize / 2;
 
   const face = (transform: string, extra: CSSProperties = {}): CSSProperties => ({
     position: "absolute",
-    width: size,
-    height: size,
+    width: effectiveSize,
+    height: effectiveSize,
     transform,
     overflow: "hidden",
     boxSizing: "border-box",
@@ -104,9 +119,9 @@ export const FlipCube: FC<FlipCubeProps> = ({
         className
       )}
       style={{
-        width: size,
-        height: size,
-        perspective: size * 3.5,
+        width: effectiveSize,
+        height: effectiveSize,
+        perspective: effectiveSize * 3.5,
         cursor: "pointer",
         userSelect: "none",
         WebkitUserSelect: "none",
@@ -121,8 +136,8 @@ export const FlipCube: FC<FlipCubeProps> = ({
       {/* ── Cube container ── */}
       <div
         style={{
-          width: size,
-          height: size,
+          width: effectiveSize,
+          height: effectiveSize,
           position: "relative",
           transformStyle: "preserve-3d",
           transition: "transform 0.85s cubic-bezier(0.45, 0.05, 0.25, 1)",
@@ -153,8 +168,8 @@ export const FlipCube: FC<FlipCubeProps> = ({
             style={{
               left: -2,
               top: -2,
-              width: size + 4,
-              height: size + 4,
+              width: effectiveSize + 4,
+              height: effectiveSize + 4,
               transform: `rotateY(180deg) translateZ(${half + 1}px)`,
               border: "2px solid var(--primary)",
               boxShadow: "0 0 20px 4px rgba(108,99,255,0.45), 0 12px 28px -8px rgba(0,0,0,0.35)",
@@ -202,7 +217,7 @@ export const FlipCube: FC<FlipCubeProps> = ({
               <h3 style={{
                 margin: "0 0 14px",
                 fontFamily: "'Georgia', 'Times New Roman', serif",
-                fontSize: Math.max(16, size * 0.08),
+                fontSize: Math.max(16, effectiveSize * 0.08),
                 fontWeight: "normal",
                 color: "var(--primary-foreground)",
                 letterSpacing: "0.06em",
@@ -217,7 +232,7 @@ export const FlipCube: FC<FlipCubeProps> = ({
               <p style={{
                 margin: 0,
                 fontFamily: "'Georgia', serif",
-                fontSize: Math.max(11, size * 0.048),
+                fontSize: Math.max(11, effectiveSize * 0.048),
                 lineHeight: 1.8,
                 color: "var(--primary-foreground)",
                 opacity: 0.9,
