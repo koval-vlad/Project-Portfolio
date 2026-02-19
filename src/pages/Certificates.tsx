@@ -127,7 +127,7 @@ export default function Certificates() {
   }, [certificates]);
 
   return (
-    <div className="relative overflow-visible px-4 pt-12 pb-24 sm:pt-16 sm:pb-28">
+    <div className="relative overflow-visible px-6 sm:px-4 pt-12 pb-24 sm:pt-16 sm:pb-28">
       {/* Hidden measure divs - one per certificate */}
       <div className="absolute invisible pointer-events-none flex flex-col gap-4" style={{ left: -9999, width: MEASURE_WIDTH }}>
         {certificates.map((cert, index) => {

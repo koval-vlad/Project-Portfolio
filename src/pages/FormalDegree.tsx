@@ -115,7 +115,7 @@ export default function FormalDegree() {
   );
 
   return (
-    <div className="relative overflow-visible px-4 pt-12 pb-24 sm:pt-16 sm:pb-28 flex items-center justify-center min-h-[calc(100vh-200px)]">
+    <div className="relative overflow-visible px-6 sm:px-4 pt-12 pb-24 sm:pt-16 sm:pb-28 flex items-center justify-center min-h-[calc(100vh-200px)]">
       {/* Hidden measure div: same structure as back face so cube size fits content */}
       <div
         ref={measureRef}

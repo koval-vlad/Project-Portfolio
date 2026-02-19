@@ -2,7 +2,7 @@ import { useState, useRef, useLayoutEffect } from "react";
 import type { FC, KeyboardEvent, TouchEvent, CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-const MOBILE_PADDING = 48;
+const MOBILE_PADDING = 80;
 const MIN_CUBE_SIZE = 260;
 
 // ─────────────────────────────────────────────────────────────────────────────
