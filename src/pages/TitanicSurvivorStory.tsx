@@ -2,7 +2,7 @@ import { Box } from '@/components/ui/box';
 import { Paper } from '@/components/ui/paper';
 import { Typography } from '@/components/ui/typography';
 import { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
+import { ButtonMenu } from '@/components/ui/button-menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShip } from '@fortawesome/free-solid-svg-icons';
 import { Code, ExternalLink, Presentation } from 'lucide-react';
@@ -42,33 +42,26 @@ export default function TitanicSurvivorStory() {
             <FontAwesomeIcon icon={faShip} style={{ fontSize: '1.2rem' }} />
           </span>
           <div className="flex items-center gap-2">
-            <Button
-              variant="super3d"
-              size="sm"
-              onClick={() => setPresentationOpen(true)}
-              className="text-xs h-7 px-2 flex items-center gap-1.5"
-            >
-              <Presentation className="h-3.5 w-3.5" />
-               Presentation
-            </Button>
-            <Button
-              variant="super3d"
-              size="sm"
-              onClick={handleCodePreview}
-              className="text-xs h-7 px-2 flex items-center gap-1.5"
-            >
-              <Code className="h-3.5 w-3.5" />
-              Code
-            </Button>
-            <Button
-              variant="super3d"
-              size="sm"
-              onClick={handleHostView}
-              className="text-xs h-7 px-2 flex items-center gap-1.5"
-            >
-              <ExternalLink className="h-3.5 w-3.5" />
-              Host
-            </Button>
+            <ButtonMenu
+              label="View"
+              items={[
+                {
+                  label: 'Presentation',
+                  icon: <Presentation className="h-3.5 w-3.5" />,
+                  onSelect: () => setPresentationOpen(true),
+                },
+                {
+                  label: 'Code',
+                  icon: <Code className="h-3.5 w-3.5" />,
+                  onSelect: handleCodePreview,
+                },
+                {
+                  label: 'Host',
+                  icon: <ExternalLink className="h-3.5 w-3.5" />,
+                  onSelect: handleHostView,
+                },
+              ]}
+            />
           </div>
         </Typography>
         <Typography variant="p" className="mb-3">

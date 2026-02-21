@@ -1,7 +1,7 @@
 import { Box } from '@/components/ui/box';
 import { Typography } from '@/components/ui/typography';
 import { Paper } from '@/components/ui/paper';
-import { Button } from '@/components/ui/button';
+import { ButtonMenu } from '@/components/ui/button-menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import TableViewIcon from '@mui/icons-material/TableView';
@@ -17,15 +17,16 @@ export default function GiftCalcs() {
             Gift Calcs <sup style={{ fontSize: '0.8rem', fontWeight: 'normal', fontFamily: 'lucida sans unicode' }}>PG Calc</sup>
             <FontAwesomeIcon icon={faCalculator} style={{ fontSize: '1.2rem' }} />
           </span>
-          <Button
-            variant="super3d"
-            size="sm"
-            onClick={() => window.open(config.pgCalc.giftCalcsDemo, '_blank')}
-            className="text-xs h-7 px-2 flex items-center gap-1.5"
-          >
-            <ExternalLink className="h-3.5 w-3.5" />
-            GiftCalcs
-          </Button>
+          <ButtonMenu
+            label="View"
+            items={[
+              {
+                label: 'GiftCalcs',
+                icon: <ExternalLink className="h-3.5 w-3.5" />,
+                onSelect: () => window.open(config.pgCalc.giftCalcsDemo, '_blank'),
+              },
+            ]}
+          />
         </Typography>
 
         <Box className="mt-3 [&_p:nth-of-type(even)]:text-primary">

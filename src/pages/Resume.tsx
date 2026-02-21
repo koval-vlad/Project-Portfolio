@@ -1,7 +1,7 @@
 import { Box } from '@/components/ui/box';
 import { Typography } from '@/components/ui/typography';
 import { Paper } from '@/components/ui/paper';
-import { Button } from '@/components/ui/button';
+import { ButtonMenu } from '@/components/ui/button-menu';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
 import LanguageIcon from '@mui/icons-material/Language';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -12,8 +12,9 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { useState } from 'react';
 import Tooltip from '@/components/ui/tooltip';
-import { Download } from 'lucide-react';
+import { Download, File, FileText } from 'lucide-react';
 import { config } from '@/config';
+import resumePdf from '/docs/vkoval@gmail.com.Resume.pdf';
 
 interface ExperienceEntry {
   title: string;
@@ -42,7 +43,7 @@ const experiences: ExperienceEntry[] = [
     description: [
       'Building and maintaining multiple software projects while completing data science coursework.',
       'Leveraging AI development tools (Cursor, Lovable, Bolt, GitHub Copilot, Claude AI) to accelerate prototyping and improve code quality.',
-      'Developed a modern, interactive portfolio website showcasing professional projects, education, and skills. Built with React, TypeScript, Tailwind CSS and a comprehensive set of modern web technologies. It features responsive navigation, SVG slideshow with fade-in effects, PDF and Excel viewers, several themes with light/darks modes and animation library effects.',
+      'Developed a modern, interactive portfolio website showcasing professional projects, education, and skills. Built with React, TypeScript, Tailwind CSS and a comprehensive set of modern web technologies. It features responsive navigation, slideshow with fade-in effects, PDF and Excel viewers, several themes with light/darks modes and animation library effects.',
       'Implemented Email Privacy Redactor AI application that automatically detects and redacts sensitive information from both email text and attached images before sending. Built with modern Python web framework (Reflex) and AI technologies (Groq and OCR.space APIs), it ensures your emails remain compliant with privacy regulations while maintaining readability. Supports multiple email providers: Mailpit, Resend API, and SendGrid.',
       'Created several Tableau dashboards providing comprehensive analytics for human resources management, including employee demographics, performance metrics, and organizational insights, featuring interactive visualizations and key performance indicators for HR decision making. Delivered interactive data story exploring the Titanic disaster through passenger data, survival rates, and demographic analysis.',
       'Built interactive Jupyter Notebook dashboard analyzing U.S. pet ownership by state using Panel, Plotly, Matplotlib, and Pandas libraries. Deployed with Docker to Linux on Hugging Face Spaces.'
@@ -224,20 +225,35 @@ export default function Resume() {
                 </a>
               </Tooltip>
             </Box>
-            <Button
-              variant="super3d"
-              size="sm"
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/docs/vkoval@gmail.com.Resume.docx';
-                link.download = 'Vlad_Koval_Resume.docx';
-                link.click();
-              }}
-              className="mt-2 flex items-center gap-1.5"
-            >
-              <Download className="h-4 w-4" />
-              DOWNLOAD WORD
-            </Button>        
+            <ButtonMenu
+              label="Download"
+              icon={<Download className="h-4 w-4" />}
+              className="mt-2"
+              items={[
+                {
+                  label: 'Word',
+                  icon: <FileText className="h-3.5 w-3.5" />,
+                  onSelect: () => {
+                    const link = document.createElement('a');
+                    link.href = '/docs/vkoval@gmail.com.Resume.docx';
+                    link.download = 'Vlad_Koval_Resume.docx';
+                    link.click();
+                  },
+                },
+                {
+                  label: 'PDF',
+                  icon: <File className="h-3.5 w-3.5" />,
+                  onSelect: () => {
+                    const link = document.createElement('a');
+                    link.href = resumePdf;
+                    link.download = 'vkoval@gmail.com.Resume.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    link.remove();
+                  },
+                },
+              ]}
+            />        
           </Box>
 
           <Box className="flex items-center justify-center my-6">

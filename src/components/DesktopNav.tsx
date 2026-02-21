@@ -32,7 +32,7 @@ export default function DesktopNav({ currentPath }: DesktopNavProps) {
     { label: '.NET', path: '/dotnet', expandable: true, category: 'dotnet' },
     { label: 'VB/ASP', path: '/vb', expandable: true, category: 'vb' },
     { label: 'Education', path: '/education', expandable: true, category: 'education' },
-    { label: 'Resume', path: '/resume', expandable: true, category: '' },
+    { label: 'About', path: '/resume', expandable: true, category: '' },
   ];
 
   const isActive = (path: string) => {
@@ -74,10 +74,10 @@ export default function DesktopNav({ currentPath }: DesktopNavProps) {
                 {item.label === 'Education' && (
                   <EducationSubmenu onClose={() => handleCloseMenu(item.label)} />
                 )}
-                {item.label === 'Resume' && (
+                {item.label === 'About' && (
                   <ResumeSubmenu onClose={() => handleCloseMenu(item.label)} />
                 )}
-                {item.label !== 'Resume' && item.label !== 'Education' && (
+                {item.label !== 'About' && item.label !== 'Education' && (
                   <ProjectSubmenu
                     category={item.category}
                     onClose={() => handleCloseMenu(item.label)}

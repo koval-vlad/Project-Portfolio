@@ -60,7 +60,7 @@ export default function MobileNav({ currentPath, onClose }: MobileNavProps) {
     { label: '.NET', path: '/dotnet', expandable: true, category: 'dotnet' },
     { label: 'VB', path: '/vb', expandable: true, category: 'vb' },
     { label: 'Education', path: '/education', expandable: true, category: 'education' },
-    { label: 'Resume', path: '/resume', expandable: true, category: '' },
+    { label: 'About', path: '/resume', expandable: true, category: '' },
   ];
 
   return (
@@ -95,7 +95,7 @@ export default function MobileNav({ currentPath, onClose }: MobileNavProps) {
 
               <CollapsibleContent className="w-full overflow-hidden" style={{ transition: 'all 0.2s ease-out' }}>
                 <Box className="w-full overflow-hidden">
-                  {item.expandable && item.label !== 'Resume' && item.label !== 'Education' && item.category && (
+                  {item.expandable && item.label !== 'About' && item.label !== 'Education' && item.category && (
                     <MobileProjectSubmenu
                       category={item.category}
                       onClose={onClose}
@@ -106,7 +106,7 @@ export default function MobileNav({ currentPath, onClose }: MobileNavProps) {
                     <MobileEducationSubmenu onClose={onClose} />
                   )}
 
-                  {item.label === 'Resume' && (
+                  {item.label === 'About' && (
                     <MobileResumeSubmenu onClose={onClose} />
                   )}
                 </Box>

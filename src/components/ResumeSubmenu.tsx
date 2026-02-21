@@ -1,7 +1,6 @@
 import { Box } from '@/components/ui/box';
-import { Eye, Download } from 'lucide-react';
+import { BookOpenText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import resumePdf from '/docs/vkoval@gmail.com.Resume.pdf';
 
 interface ResumeSubmenuProps {
   onClose: () => void;
@@ -10,36 +9,19 @@ interface ResumeSubmenuProps {
 export default function ResumeSubmenu({ onClose }: ResumeSubmenuProps) {
   const navigate = useNavigate();
 
-  const handleView = () => {
+  const handleViewResume = () => {
     navigate('/resume');
-    onClose();
-  };
-
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = resumePdf;
-    link.download = 'vkoval@gmail.com.Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
     onClose();
   };
 
   return (
     <Box className="w-full bg-background">
       <button
-        onClick={handleView}
+        onClick={handleViewResume}
         className="group flex items-center w-full py-2 px-4 text-foreground text-sm hover:bg-accent hover:text-accent-foreground hover:cursor-pointer transition-colors"
       >
-        <Eye className="h-4 w-4 mr-3 text-foreground group-hover:text-accent-foreground" />
-        View
-      </button>
-      <button
-        onClick={handleDownload}
-        className="group flex items-center w-full py-2 px-4 text-foreground text-sm hover:bg-accent hover:text-accent-foreground hover:cursor-pointer transition-colors"
-      >
-        <Download className="h-4 w-4 mr-3 text-foreground group-hover:text-accent-foreground" />
-        Download PDF
+        <BookOpenText className="h-4 w-4 mr-3 text-foreground group-hover:text-accent-foreground" />
+        View Resume
       </button>
     </Box>
   );

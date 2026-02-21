@@ -9,7 +9,7 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
+import { ButtonMenu } from '@/components/ui/button-menu';
 import { Code } from 'lucide-react';
 import { config } from '@/config';
 
@@ -66,15 +66,16 @@ export default function Home() {
                             Welcome to Project Portfolio
                         </Typography>
                         <Box className="flex-1 flex justify-end">
-                            <Button
-                                variant="super3d"
-                                size="sm"
-                                onClick={handleCodePreview}
-                                className="text-xs h-7 px-2 flex items-center gap-1.5"
-                            >
-                                <Code className="h-3.5 w-3.5" />
-                                Code
-                            </Button>
+                            <ButtonMenu
+                                label="View"
+                                items={[
+                                    {
+                                        label: 'Code',
+                                        icon: <Code className="h-3.5 w-3.5" />,
+                                        onSelect: handleCodePreview,
+                                    },
+                                ]}
+                            />
                         </Box>
                     </Box>                    
                     <Typography variant="p" className="mb-4 px-12">
