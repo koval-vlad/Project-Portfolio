@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useCallback } from "react";
 
 interface PapyrusScrollProps {
   title: string;
@@ -13,19 +13,6 @@ interface PapyrusScrollProps {
 
 export default function PapyrusScroll({ title, titleLeft, imageSrc, imageAlt = "scroll image", onImageClick, children }: PapyrusScrollProps) {
   const [expanded, setExpanded] = useState(false);
-  const touchStartY = useRef<number | null>(null);
-
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    touchStartY.current = e.touches[0].clientY;
-  }, []);
-
-  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
-    if (touchStartY.current === null) return;
-    const dy = e.changedTouches[0].clientY - touchStartY.current;
-    if (Math.abs(dy) > 30) setExpanded(dy > 0);
-    else setExpanded(v => !v);
-    touchStartY.current = null;
-  }, []);
 
   const toggle = useCallback(() => setExpanded(v => !v), []);
 
@@ -80,7 +67,7 @@ export default function PapyrusScroll({ title, titleLeft, imageSrc, imageAlt = "
       </div>
 
       {/* PARCHMENT - same theme/mode as FuturisticCard text area: bg-card/10 backdrop-blur-xl */}
-      <div style={{ position: "relative", width: "100%", zIndex: 2 }} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+      <div style={{ position: "relative", width: "100%", zIndex: 2 }}>
         <div style={{ height: 6, background: "linear-gradient(180deg,rgba(80,40,5,0.35) 0%,transparent 100%)" }} />
         <div
           className="bg-card/10 backdrop-blur-xl"
