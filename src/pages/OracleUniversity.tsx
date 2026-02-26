@@ -1,6 +1,5 @@
-import { Box } from '@/components/ui/box';
 import { Button } from '@/components/ui/button';
-import { FuturisticCard } from '@/components/ui/futuristic-card';
+import PapyrusScroll from '@/components/ui/papyrus-scroll';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { X } from 'lucide-react';
@@ -17,42 +16,15 @@ interface OracleCardProps {
 
 const OracleCard = ({ certificateImage, topText, bottomText, onImageClick }: OracleCardProps) => {
   return (
-    <FuturisticCard className="w-full max-w-[400px]">
-      {/* Header with flag and text */}
-      <div className="flex items-center gap-3 p-3 bg-accent">
-        <img
-          src={usaFlag}
-          alt="USA Flag"
-          className="w-6 h-auto"
-        />
-        <div>
-          {topText.map((line, index) => (
-            <p
-              key={index}
-              className="font-bold text-foreground text-xs leading-tight"
-            >
-              {line}
-            </p>
-          ))}
-        </div>
-      </div>
-
-      {/* Certificate Image */}
-      <div className="w-full cursor-pointer" onClick={() => onImageClick(certificateImage)}>
-        <img
-          src={certificateImage}
-          alt="Certificate"
-          className="w-full h-auto block transition-opacity hover:opacity-80"
-        />
-      </div>
-
-      {/* Bottom Text - Always Visible */}
-      <div className="p-3">
-        <p className="text-left text-foreground text-xs leading-relaxed">
-          {bottomText}
-        </p>
-      </div>
-    </FuturisticCard>
+    <PapyrusScroll
+      title={topText.join(' · ')}
+      titleLeft={<img src={usaFlag} alt="USA Flag" className="w-6 h-auto" />}
+      imageSrc={certificateImage}
+      imageAlt="Certificate"
+      onImageClick={onImageClick}
+    >
+      <p className="text-left leading-relaxed">{bottomText}</p>
+    </PapyrusScroll>
   );
 };
 

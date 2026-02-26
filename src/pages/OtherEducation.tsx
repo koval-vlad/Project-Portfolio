@@ -1,4 +1,4 @@
-import { FuturisticCard } from '@/components/ui/futuristic-card';
+import PapyrusScroll from '@/components/ui/papyrus-scroll';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
@@ -25,42 +25,19 @@ interface OtherEducationCardProps {
 
 const OtherEducationCard = ({ certificateImage, certificateImageLarge, topText, bottomText, onImageClick }: OtherEducationCardProps) => {
   return (
-    <FuturisticCard className="w-full max-w-[250px]">
-      {/* Header with flag and text */}
-      <div className="flex items-center gap-2 p-2 bg-accent">
-        <img
-          src={usaFlag}
-          alt="USA Flag"
-          className="w-6 h-auto"
-        />
-        <div>
-          {topText.map((line, index) => (
-            <p
-              key={index}
-              className="font-bold text-foreground text-xs leading-tight"
-            >
-              {line}
-            </p>
-          ))}
-        </div>
-      </div>
-
-      {/* Certificate Image */}
-      <div className="w-full cursor-pointer" onClick={() => onImageClick(certificateImageLarge)}>
-        <img
-          src={certificateImage}
-          alt="Certificate"
-          className="w-full h-auto block transition-opacity hover:opacity-80"
-        />
-      </div>
-
-      {/* Bottom Text - Always Visible */}
-      <div className="p-2">
-        <p className="text-left text-foreground text-sm leading-relaxed">
+    <div className="w-full max-w-[308px]">
+      <PapyrusScroll
+        title={topText.join(' · ')}
+        titleLeft={<img src={usaFlag} alt="USA Flag" className="w-6 h-auto" />}
+        imageSrc={certificateImage}
+        imageAlt="Certificate"
+        onImageClick={() => onImageClick(certificateImageLarge)}
+      >
+        <p className="text-left text-sm leading-relaxed">
           {bottomText}
         </p>
-      </div>
-    </FuturisticCard>
+      </PapyrusScroll>
+    </div>
   );
 };
 
@@ -68,25 +45,25 @@ const courses = [
   {
     certificateImage: activeServerPagesSmall,
     certificateImageLarge: activeServerPagesLarge,
-    topText: ['Active Server Pages Training', 'Creative Data'],
+    topText: ['Active Server Pages', 'Creative Data'],
     bottomText: 'The course teaches the fundamentals of building dynamic, server-side web applications using classic ASP. It covers core concepts such as the ASP object model (Request, Response, and Session objects), scripting with VBScript, and utilizing ActiveX Data Objects (ADO) for database connectivity and manipulation.',
   },
   {
     certificateImage: javaServerPagesSmall,
     certificateImageLarge: javaServerPagesLarge,
-    topText: ['Introduction to Java Server Pages', 'West Lake Internet Training'],
+    topText: ['Java Server Pages', 'West Lake Internet Training'],
     bottomText: 'The course provides a foundational overview of using JSP to create dynamic, data-driven web applications by embedding Java code within HTML. Key concepts include mastering JSP syntax - such as scriptlets, expressions, and declarations - while exploring the integration of JavaBeans, custom tag libraries, and database connectivity.',
   },
   {
     certificateImage: visualStudioSmall,
     certificateImageLarge: visualStudioLarge,
-    topText: ['Testers Training Using Visual Studio Ultimate', 'Notion Solutions'],
+    topText: ['Visual Studio Ultimate', 'Notion Solutions'],
     bottomText: 'The course provides a comprehensive look at the application lifecycle with a specific focus on the tools available to testers in the Visual Studio Ultimate release. Key concepts include creating and managing test plans and cases, executing manual and exploratory tests, and utilizing Microsoft Test Manager (MTM) for bug filing and tracking within Team Foundation Server.',
   },
   {
     certificateImage: businessAnalysisSmall,
     certificateImageLarge: businessAnalysisLarge,
-    topText: ['Business Analysis Boot Camp', 'Corporate Education Group'],
+    topText: ['Business Analysis', 'Corporate Education Group'],
     bottomText: 'The boot camp provides an intensive, practical foundation in business analysis aligned with industry standards like the BABOK® Guide. The course covers essential techniques for eliciting and documenting requirements, analyzing stakeholders, and modeling business processes using both predictive (Waterfall) and adaptive (Agile) approaches.',
   },
 ];
