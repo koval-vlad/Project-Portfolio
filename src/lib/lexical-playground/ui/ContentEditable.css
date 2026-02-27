@@ -1,0 +1,29 @@
+.ContentEditable__root {
+  border: 0;
+  font-size: 15px;
+  display: block;
+  position: relative;
+  outline: 0;
+  padding: 8px 12px 12px;
+  min-height: 156px;
+}
+
+.ContentEditable__placeholder {
+  font-size: 15px;
+  color: var(--muted-foreground, #999);
+  overflow: hidden;
+  position: absolute;
+  text-overflow: ellipsis;
+  top: 8px;
+  left: 12px;
+  right: 12px;
+  user-select: none;
+  white-space: nowrap;
+  display: inline-block;
+  pointer-events: none;
+}
+
+/* Contact form: fixed colors, no theme/mode */
+.ContentEditable__placeholder--contact {
+  color: #6b7280;
+}

@@ -31,6 +31,7 @@ const Pluralsight = lazy(() => import('./pages/Pluralsight'));
 const OracleUniversity = lazy(() => import('./pages/OracleUniversity'));
 const OtherEducation = lazy(() => import('./pages/OtherEducation'));
 const Resume = lazy(() => import('./pages/Resume'));
+const Contact = lazy(() => import('./pages/Contact'));
 const EmailRedactorAI = lazy(() => import('./pages/EmailRedactorAI'));
 const PetAnalysisDashboard = lazy(() => import('./pages/PetAnalysisDashboard'));
 
@@ -104,6 +105,7 @@ function AppContent() {
                 <Route path="/education/oracle-university" element={<OracleUniversity />} />
                 <Route path="/education/other" element={<OtherEducation />} />
                 <Route path="/resume" element={<Resume />} />
+                <Route path="/contact" element={<Contact />} />
               </Routes>
           </Suspense>
             </Box>

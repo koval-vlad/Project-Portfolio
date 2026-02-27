@@ -24,3 +24,5 @@ dist-ssr
 /.vs
 /my-portfolio.Material-UI-OLD.zip
 /public/docs/~$oval@gmail.com.Resume.docx
+.vercel
+.env*.local

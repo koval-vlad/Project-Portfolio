@@ -1,9 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!api/|src/|@|node_modules/|assets/|vite.svg|favicon).*)",
       "destination": "/index.html"
     }
   ]
 }
-

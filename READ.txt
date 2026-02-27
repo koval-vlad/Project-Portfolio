@@ -1,3 +1,11 @@
+---------To test sending Contact email locally-----
+Run locally:
+vercel dev
+
+Sync env variables:
+vercel env pull .env.local
+---------------------------------------
+
 Before using in VS Code or Cursor run this command to install node_modules: 
 
 npm install
