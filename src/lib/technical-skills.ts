@@ -22,7 +22,8 @@ export const technicalSkills: { category: string; items: { name: string; img?: s
     category: 'Technologies',
     items: [
       { name: 'Reflex', img: getAssetUrl('reflex-light.webp') },
-      { name: 'Tkinter', img: getAssetUrl('tk-light.svg') },
+      { name: 'Flask', img: getAssetUrl('flask-light.webp') },
+      { name: 'Tkinter', img: getAssetUrl('tk-light.svg') },      
       { name: '.NET Core', img: getAssetUrl('dotnetcore-light.svg') },
       { name: 'WPF', img: getAssetUrl('wpf-light.webp') },
       { name: 'gRPC', img: getAssetUrl('grpc-light.webp') },
@@ -90,9 +91,12 @@ export const technicalSkills: { category: string; items: { name: string; img?: s
     ],
   },
   {
-    category: 'CI/CD Software',
+    category: 'Cloud/DevOps',
     items: [
+      { name: 'AWS', img: getAssetUrl('aws-light.webp') }, 
       { name: 'Azure DevOps', img: getAssetUrl('azure-light.svg') },  
+      { name: 'Docker', img: getAssetUrl('docker-light.webp') }, 
+      { name: 'Kubernetes', img: getAssetUrl('kubernetes-light.webp') }, 
       { name: 'TeamCity', img: getAssetUrl('teamcity-light.svg') },  
       { name: 'Git', img: getAssetUrl('git-light.svg') },  
       { name: 'BitBucket', img: getAssetUrl('bitbucket-light.svg') },  

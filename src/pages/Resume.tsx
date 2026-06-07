@@ -44,11 +44,13 @@ const experiences: ExperienceEntry[] = [
       'Building and maintaining multiple software projects while completing data science coursework.',
       'Leveraging AI development tools (Cursor, Lovable, Bolt, GitHub Copilot, Claude AI) to accelerate prototyping and improve code quality.',
       'Developed a modern, interactive portfolio website showcasing professional projects, education, and skills. Built with React, TypeScript, Tailwind CSS and a comprehensive set of modern web technologies. It features responsive navigation, slideshow with fade-in effects, PDF and Excel viewers, several themes with light/darks modes and animation library effects.',
-      'Implemented Email Privacy Redactor AI application that automatically detects and redacts sensitive information from both email text and attached images before sending. Built with modern Python web framework (Reflex) and AI technologies (Groq and OCR.space APIs), it ensures your emails remain compliant with privacy regulations while maintaining readability. Supports multiple email providers: Mailpit, Resend API, and SendGrid.',
+      'Implemented Email Privacy Redactor AI application that automatically detects and redacts sensitive information from both email text and attached images before sending. Built with modern Python web framework (Reflex) and AI technologies (Groq and OCR.space APIs), it ensures your emails remain compliant with privacy regulations while maintaining readability. Supports multiple email providers: Mailpit, Resend API, and Brevo.',
+      'Delivered Flask-based Stock Market dashboard for browsing US equities with TradingView Lightweight chart, live price updates, Finnhub API ticker search, and a MySQL-backed watchlist. Historical prices and candles came from Python yfinance library. Deployed scaled pod replicas under Kubernetes on AWS Ubuntu/EC2 master/worker nodes.',
+      'Designed containerized Weather dashboard that fetches a 5-day forecast from the OpenWeatherMap API and presents it in a modern, responsive UI. Built with Flask, Nginx, and Docker Compose, with optional horizontal scaling via multiple app replicas behind a reverse proxy.',
       'Created several Tableau dashboards providing comprehensive analytics for human resources management, including employee demographics, performance metrics, and organizational insights, featuring interactive visualizations and key performance indicators for HR decision making. Delivered interactive data story exploring the Titanic disaster through passenger data, survival rates, and demographic analysis.',
       'Built interactive Jupyter Notebook dashboard analyzing U.S. pet ownership by state using Panel, Plotly, Matplotlib, and Pandas libraries. Deployed with Docker to Linux on Hugging Face Spaces.'
     ],
-    skills: ['React', 'TypeScript', 'Python', 'Reflex', 'Tableau', 'AI Tools'],
+    skills: ['React', 'TypeScript', 'AWS', 'Docker', 'Kubernetes', 'Python', 'Reflex', 'Flask', 'Tableau', 'AI Tools'],
   },
   {
     title: 'Senior Software Developer',
