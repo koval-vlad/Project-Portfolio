@@ -34,7 +34,7 @@ export const config: AppConfig = {
     titanic: {
       code: 'https://github.com/koval-vlad/Tableau-Projects/tree/master/Who%20Survived%20Titanic%20Tragedy%20Story',
       host: 'https://public.tableau.com/app/profile/vlad.koval/viz/WhoSurvivedTitanicTragedyStory/WhoSurvivedTitanicTragedyStory',
-      embed: 'https://public.tableau.com/shared/D5J3ZZ2CH?:display_count=n&:origin=viz_share_link',
+      embed: 'https://public.tableau.com/views/WhoSurvivedTitanicTragedyStory/SurvivalAnalysisDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link',
     },
   },
   officeEmbedBase: 'https://view.officeapps.live.com/op/embed.aspx',
